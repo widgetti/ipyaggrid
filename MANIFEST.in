@@ -1,0 +1,9 @@
+
+# js
+recursive-include ipyaggrid/static *.*
+recursive-include ipyaggrid/js *.js
+
+# Misc
+include requirements.txt
+include LICENSE
+global-exclude *.py[co]

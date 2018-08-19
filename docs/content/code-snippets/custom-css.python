@@ -1,0 +1,25 @@
+# putting in !important so it overrides the theme's styling as it hovers the row also
+css_rules = """
+.ag-row-hover {
+    background-color: lightblue !important;
+}
+
+.ag-column-hover {
+    background-color: powderblue;
+}
+
+.ag-row-hover .ag-column-hover {
+    background-color: deepskyblue !important;
+}
+"""
+
+column_defs = [{'field': c} for c in dfm.columns[:7]]
+
+grid_options = {
+    'columnDefs' : column_defs,
+}
+
+g = Grid(grid_data=dfm,
+         css_rules=css_rules,
+         grid_options=grid_options)
+g

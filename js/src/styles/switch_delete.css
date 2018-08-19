@@ -1,0 +1,64 @@
+.div-delete {
+    width: 85px;
+    padding-left: 4px;
+}
+
+.div-delete > .div-delete-2 {
+    padding-right: 5px
+}
+
+.div-delete > div > .switch {
+    position: relative;
+    display: inline-block;
+    width: 30px;
+    height: 20px;
+}
+
+.div-delete > div > .switch input {
+    display: none;
+}
+
+.div-delete > div > label > .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: 0.2s;
+    transition: 0.2s;
+}
+
+.div-delete > div > label > .slider:before {
+    position: absolute;
+    content: '';
+    height: 15px;
+    width: 15px;
+    left: 2px;
+    bottom: 3px;
+    background-color: white;
+    -webkit-transition: 0.2s;
+    transition: 0.2s;
+}
+
+.div-delete > div > label > input:checked + .slider {
+    background-color: #f37626;
+}
+
+.div-delete > div > label > input:focus + .slider {
+    box-shadow: 0 0 1px #f37626;
+}
+
+.div-delete > div > label > input:checked + .slider:before {
+    -webkit-transform: translateX(10px);
+    -ms-transform: translateX(10px);
+    transform: translateX(10px);
+}
+
+.div-delete > div > label > .slider.round {
+    border-radius: 50px;
+}
+.div-delete > div > label > .slider.round:before {
+    border-radius: 50%;
+}

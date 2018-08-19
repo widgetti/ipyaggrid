@@ -1,0 +1,11 @@
+
+grid_options = {
+    'columnDefs' : column_defs,
+    'enableRangeSelection': True,
+}
+
+g = Grid(grid_data=dfm,
+         grid_options=grid_options,
+         quick_filter=False,
+         show_toggle_delete=True)
+g

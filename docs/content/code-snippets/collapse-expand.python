@@ -1,0 +1,26 @@
+
+column_defs = [{'field':'origin', 'headerName': 'Origin', 'rowGroup':True, 'hide':True},
+                  {'field':'make', 'headerName': 'Make', 'rowGroup':True, 'hide':True},
+                  {'field':'carName', 'headerName':'Model'},
+                  {'field':'price', 'headerName': 'Price', 'aggFunc':'avg'}]
+
+grid_options = {
+    'columnDefs' : column_defs,
+    'enableSorting': True,
+    'enableFilter': True,
+    'enableColResize': True,
+    'groupMultiAutoColumn': True,
+    'animateRows':True
+}
+
+buttons = [
+{'name':'Expand All', 'action':'''gridOptions.api.expandAll();'''},
+{'name':'Collapse All', 'action':'''gridOptions.api.collapseAll();'''},
+]
+
+g = Grid(grid_data=cars,
+         theme="ag-theme-balham",
+         grid_options=grid_options,
+         menu = {'buttons':buttons},
+         quick_filter=False)
+g

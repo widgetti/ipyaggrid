@@ -1,0 +1,39 @@
+{
+    "extends": ["airbnb", "prettier"],
+    "plugins": ["prettier", "html"],
+    "rules": {
+        "prettier/prettier": ["error"],
+        "no-console": "off",
+        "func-names": "off",
+        "no-undef": "off",
+        "camelcase": "off",
+        "prefer-destructuring": [
+            "error",
+            {
+                "object": true,
+                "array": false
+            }
+        ],
+        "no-underscore-dangle": [
+            "error",
+            {
+                "allow": ["__super__", "_id","_grid_data"]
+            }
+        ],
+        "no-param-reassign": "off",
+        "no-use-before-define": "off",
+        "prefer-rest-params": "off"
+    },
+    "parserOptions": {
+        "ecmaVersion": 6,
+        "sourceType": "module",
+        "ecmaFeatures": {
+            "jsx": true
+        }
+    },
+    "env": {
+        "es6": true,
+        "browser": true,
+        "node": true
+    }
+}

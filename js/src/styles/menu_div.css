@@ -1,0 +1,8 @@
+.menu-div {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11pt;
+}
+
+.menu-div > div > * {
+    margin: 5px;
+}

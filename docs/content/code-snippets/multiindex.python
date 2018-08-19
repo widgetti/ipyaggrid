@@ -1,0 +1,13 @@
+
+column_defs = []
+
+grid_options = {
+    'columnDefs' : column_defs,
+    'suppressColumnVirtualisation':True,
+}
+
+g = Grid(grid_data=df,
+         grid_options=grid_options,
+         keep_multiindex=True,
+         columns_fit='auto')
+g

@@ -1,0 +1,38 @@
+column_defs = [{'field':'origin', 'headerName': 'Origin', 'rowGroup':True, 'hide':True},
+                  {'field':'make', 'headerName': 'Make', 'rowGroup':True, 'hide':True},
+                  {'field':'carName', 'headerName':'Model'},
+                  {'field':'price', 'headerName': 'Price', 'aggFunc':'avg'}]
+
+
+gridOptions = {
+    'enableColResize': True,
+    'columnDefs': column_defs,
+    'enableFilter':True,
+    'enableSorting':True,
+    'animateRows':True,
+    'groupMultiAutoColumn': True,
+};
+
+buttons=[{'name':'Highlight', 'action':"""
+gridOptions.api.forEachNodeAfterFilterAndSort(node => {
+    if (node.aggData){
+        if (node.aggData.price.value > 30000){
+            gridOptions.api.flashCells({rowNodes: [node], columns: ["price"]});
+        }
+    } else {
+        if (node.data.price>30000){
+            gridOptions.api.flashCells({rowNodes: [node], columns: ["price"]});
+        }
+    }
+});
+"""}]
+
+
+g = Grid(quick_filter=False,
+         theme='ag-theme-balham',
+         compress_data=True,
+         menu = {'buttons':buttons},
+         grid_options=gridOptions,
+         js_post_grid=["gridOptions.api.expandAll();"],
+         grid_data=cars)
+g

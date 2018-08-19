@@ -1,0 +1,11 @@
+
+column_defs = [{'field': dfm.index.name}] + [{'field': c} for c in dfm.columns[:3]]
+
+grid_options = {
+    'columnDefs' : column_defs,
+}
+
+g = Grid(grid_data=dfm,
+         grid_options=grid_options,
+         index=True)
+g

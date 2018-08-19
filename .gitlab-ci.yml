@@ -1,0 +1,22 @@
+image: node:9.11.1
+variables:
+  GIT_TRACING: "2"
+  GIT_CURL_VERBOSE: "1"
+  CI_DEBUG_TRACE: "true"
+pages:
+  cache:
+    paths:
+    - docs/node_modules/
+  script:
+  - git remote rm origin
+  - git remote add origin http://DGothrek:$ACCESS_TOKEN@gitlab.com/DGothrek/ipyaggrid.git
+  - git subtree push --prefix docs/notebooks/ origin binder-demo
+  - mkdir public
+  - cd docs
+  - npm install
+  - npm run docs:build
+  artifacts:
+    paths:
+    - public
+  only:
+  - master

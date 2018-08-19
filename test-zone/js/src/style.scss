@@ -1,0 +1,36 @@
+// Customize the look and feel of the grid with Sass variables
+// Up-to-date list of variables is available in the source code: https://github.com/ag-grid/ag-grid/blob/latest/src/styles/theme-fresh.scss
+
+// Temporary, due to bug in 17.0.0. should use only $icons-path:  "~ag-grid/src/styles/material-icons/"
+$icons-path: "~ag-grid/src/styles/icons/";
+$ag-mat-icons-path: "~ag-grid/src/styles/icons/";
+
+// changes the border color
+$border-color: silver;
+
+// Changes the font size
+$font-size: 12px;
+
+// Reverts the cell horizontal padding change between ag-fresh and ag-theme-fresh
+$cell-horizontal-padding: 0px;
+
+// changes the default icon color
+$icon-color: lightslategrey;
+
+$row-height: 20px;
+$cell-horizontal-border:1px solid silver;
+$ag-range-selected-color-1: LightSlateGrey;
+
+$odd-row-background-color: white;
+
+$hover-color : transparent;
+$header-height : 20px;
+
+@import "~ag-grid/src/styles/ag-grid.scss";
+@import "~ag-grid/src/styles/ag-theme-balham.scss";
+
+// for example purposes, remove margin and padding of the grid
+html,
+body {
+  height: 100%;
+}

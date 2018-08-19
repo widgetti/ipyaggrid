@@ -1,0 +1,11 @@
+
+column_defs = [{'field': c, 'width':500} for c in dfm.columns]
+
+grid_options = {
+    'columnDefs' : column_defs,
+}
+
+g = Grid(grid_data=dfm,
+         grid_options=grid_options,
+         columns_fit="auto")
+g
