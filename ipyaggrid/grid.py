@@ -280,7 +280,6 @@ class Grid(wg.DOMWidget):
         bwp = BuilderParams(self)
         bwp.valid()
         bwp.build()
-        self.grid_data_out = {}
 
     def export_html(self, build=False):
         """
