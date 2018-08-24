@@ -6,6 +6,11 @@ module.exports = {
     head: [['link', { rel: 'icon', href: '/favicon-16x16.png' }]],
     // serviceWorker: true,
     themeConfig: {
+        algolia: {
+            apiKey: 'fd3694c4c215531b2b8b966520ce657e',
+            indexName: 'ipyaggrid'
+        },
+        
         repo: 'https://gitlab.com/dgothrek/ipyaggrid',
         editLinks: false,
         editLinkText: 'Edit this page on GitLab',
