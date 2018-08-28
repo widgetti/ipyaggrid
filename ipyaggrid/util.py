@@ -16,10 +16,12 @@ class Util:
 
     @staticmethod
     def data_to_json(value, widget):
+        dump = json.dumps(value, default=Util.json_serial, ignore_nan=True)
         if (widget.compress_data):
-            return (base64.encodebytes(gzip.compress((json.dumps(value, default=Util.json_serial, ignore_nan=True)).encode('utf-8'), compresslevel=9))).decode('utf-8')
+            res = (base64.encodebytes(gzip.compress((dump).encode('utf-8'), compresslevel=9))).decode('utf-8')
+            return res
         else:
-            return json.dumps(value, default=Util.json_serial)
+            return dump
 
     @staticmethod
     def data_from_json(value, widget):
@@ -27,7 +29,8 @@ class Util:
 
     @staticmethod
     def options_to_json(value, widget):
-        return (base64.encodebytes(gzip.compress(value.encode('utf-8'), compresslevel=9))).decode('utf-8')
+        res = (base64.encodebytes(gzip.compress(value.encode('utf-8'), compresslevel=9))).decode('utf-8')
+        return res
 
     @staticmethod
     def multi_options_to_json(value, widget):

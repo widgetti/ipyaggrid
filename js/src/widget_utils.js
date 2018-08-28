@@ -316,22 +316,44 @@ const menuBuiler = (view, menu, sheet) => {
  * @param {String} value
  */
 function deserialize_data(value) {
+    if (value.constructor === Array) {
+        return value;
+    }
     try {
         return JSON.parse(gzip.uncompressBase64ToStr(value, 9));
     } catch (e) {
+        console.log('Cannot uncompress');
         console.log(e);
         return JSON.parse(value);
     }
 }
 
 function deserialize_options(value) {
-    return gzip.uncompressBase64ToStr(value, 9);
+    window.toto = value;
+    try {
+        return gzip.uncompressBase64ToStr(value, 9);
+    } catch (e) {
+        console.log('Cannot uncompress');
+        console.log(e);
+        return value;
+    }
+    // if (value.constructor === String) {
+    //     return value;
+    // }
+    // return gzip.uncompressBase64ToStr(value, 9);
 }
 
 function deserialize_multi_options(value) {
     const res = [];
     value.forEach(([name, option]) => {
-        res.push([name, gzip.uncompressBase64ToStr(option, 9)]);
+        try {
+            res.push([name, gzip.uncompressBase64ToStr(option, 9)]);
+        } catch (e) {
+            console.log('Cannot uncompress');
+            console.log(e);
+            res.push([name, option]);
+        }
+        // res.push([name, gzip.uncompressBase64ToStr(option, 9)]);
     });
     return res;
 }
