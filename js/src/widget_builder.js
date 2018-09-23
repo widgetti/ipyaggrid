@@ -1,6 +1,6 @@
 import { Grid } from 'ag-grid';
 import { LicenseManager } from 'ag-grid-enterprise';
-import moduled3 from 'd3';
+import * as moduled3 from 'd3';
 
 import * as Utils from './widget_utils';
 import { exportFunc } from './widget_export';

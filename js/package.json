@@ -64,7 +64,7 @@
         "@jupyter-widgets/controls": "^1.1.5",
         "ag-grid": "^18.0.0",
         "ag-grid-enterprise": "^18.0.0",
-        "d3": "^3.5.5",
+        "d3": "^5.7.0",
         "lodash": "^4.17.4",
         "pako": "^1.0.6"
     }

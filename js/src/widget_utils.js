@@ -1,6 +1,6 @@
-import * as moduled3 from 'd3';
 import { gzip } from './widget_compress';
 import * as exportFunctions from './widget_export';
+import * as moduled3 from 'd3';
 
 // make available to js eval-ed
 const { exportFunc } = exportFunctions;
