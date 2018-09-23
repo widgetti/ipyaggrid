@@ -53,6 +53,7 @@ module.exports = {
                 children: [
                     '/dev/dev_install',
                     '/dev/publish',
+                    '/dev/doc',
                     '/dev/structure',
                 ],
             },
