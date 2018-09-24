@@ -42,6 +42,6 @@ Here is an overview of their roles:
     + Link from the [_User Guide/Create/Parameters/Export to Python_](../guide/create.html#export-to-python) section
 
 + [demo-ipyaggrid-customize.ipynb](https://gitlab.com/DGothrek/ipyaggrid/blob/master/docs/notebooks/demo-ipyaggrid-customize.ipynb)  
-    +Collection of live examples focused on advanced customization of the **ag-Grid** options using their API and the various JS injections points made available in **ipyaggrid**
+    + Collection of live examples focused on advanced customization of the **ag-Grid** options using their API and the various JS injections points made available in **ipyaggrid**
     + Link from the [_User Guide/Customize/Live Demo_](../guide/customize.html#live-demo) section
 
