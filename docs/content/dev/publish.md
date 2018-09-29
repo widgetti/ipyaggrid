@@ -44,7 +44,7 @@ For more info see th [official doc](https://docs.npmjs.com/getting-started/publi
 # make sure the version in js/package.json is correct
 
 # build notebook extension javascript
-$ cd ipyaggrid/js
+$ cd js
 $ npm install
 
 # test run to see what you will publish
