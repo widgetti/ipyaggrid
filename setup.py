@@ -5,8 +5,12 @@
 # cf. https://pythonhosted.org/setuptools/setuptools.html
 
 # commands:
+# 1-line:
 # python setup.py sdist upload -r testpypi
 # python setup.py sdist upload -r pypi
+# 2-line - recommended, more control
+# python setup.py sdist
+# twine upload dist/*
 
 
 from distutils.util import convert_path
