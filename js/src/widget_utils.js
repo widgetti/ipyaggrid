@@ -253,8 +253,17 @@ const setupShowToggleEdit = (view, menu, sheet, input) => {
     sheet.insertRule(input.css, sheet.cssRules.length);
     menu.inputDivs.push(divEdit);
 
-    inputEdit.oninput = () => {
-        console.log('edit');
+    // inputEdit.oninput = () => {
+    //     console.log('edit - oninput');
+    //     if (inputEdit.checked) {
+    //         editMode(view, view.gridOptions, true);
+    //     } else {
+    //         editMode(view, view.gridOptions, false);
+    //     }
+    // };
+
+    inputEdit.onchange = () => {
+        console.log('edit - onchange');
         if (inputEdit.checked) {
             editMode(view, view.gridOptions, true);
         } else {
