@@ -4,7 +4,20 @@ grid_options = {
     'columnDefs' : column_defs,
 }
 
+themes = [
+    'ag-theme-balham',
+    'ag-theme-balham-dark',
+    'ag-theme-material',
+    'ag-theme-fresh',
+    'ag-theme-dark',
+    'ag-theme-blue',
+    'ag-theme-bootstrap',
+    'ag-theme-excel', # custom style added by ipyaggrid
+]
+
 g = Grid(grid_data=dfm,
-         theme="ag-theme-dark",
+         theme='ag-theme-balham-dark',
+#          theme='ag-theme-balham',
+#          theme='ag-theme-excel',
          grid_options=grid_options)
 g

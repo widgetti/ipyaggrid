@@ -1,0 +1,22 @@
+column_defs = [{'field': c} for c in dfm.columns[:7]]
+
+css = ".ag-status-bar { min-height: 35px; }"
+
+grid_options = {
+    'columnDefs' : column_defs,
+    'enableRangeSelection': True,
+    'statusBar': { # new syntax since 19.0
+        'statusPanels': [
+            { 'statusPanel': 'agTotalRowCountComponent', 'align': 'left' },
+            { 'statusPanel': 'agFilteredRowCountComponent' },
+            { 'statusPanel': 'agSelectedRowCountComponent' },
+            { 'statusPanel': 'agAggregationComponent' }
+        ]
+    },
+#     'enableStatusBar': True, # deprecated since 19.0
+}
+
+g = Grid(grid_data=dfm,
+         grid_options=grid_options,
+         css_rules=css)
+g

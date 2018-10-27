@@ -6,8 +6,7 @@
                      :rowData="rowData"
                      :enableSorting="true"
                      :enableFilter="true"
-                     rowSelection="multiple"
-
+                     :rowSelection="multiple"
                      :gridReady="onGridReady">
         </ag-grid-vue>
     </div>
@@ -15,8 +14,8 @@
 
 <script>
 import { AgGridVue } from "ag-grid-vue";
-import "ag-grid/dist/styles/ag-grid.css";
-import "ag-grid/dist/styles/ag-theme-balham.css";
+import "ag-grid-community/dist/styles/ag-grid.css";
+import "ag-grid-community/dist/styles/ag-theme-balham.css";
 
 export default {
   name: "demo1",
