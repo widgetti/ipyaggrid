@@ -2,13 +2,14 @@ import * as widgets from '@jupyter-widgets/base';
 import { extend } from 'lodash';
 
 // styles
-import 'ag-grid/dist/styles/ag-grid.css';
-import 'ag-grid/dist/styles/ag-theme-fresh.css';
-import 'ag-grid/dist/styles/ag-theme-balham.css';
-import 'ag-grid/dist/styles/ag-theme-dark.css';
-import 'ag-grid/dist/styles/ag-theme-blue.css';
-import 'ag-grid/dist/styles/ag-theme-material.css';
-import 'ag-grid/dist/styles/ag-theme-bootstrap.css';
+import 'ag-grid-community/dist/styles/ag-grid.css';
+import 'ag-grid-community/dist/styles/ag-theme-fresh.css';
+import 'ag-grid-community/dist/styles/ag-theme-balham.css';
+import 'ag-grid-community/dist/styles/ag-theme-balham-dark.css';
+import 'ag-grid-community/dist/styles/ag-theme-dark.css';
+import 'ag-grid-community/dist/styles/ag-theme-blue.css';
+import 'ag-grid-community/dist/styles/ag-theme-material.css';
+import 'ag-grid-community/dist/styles/ag-theme-bootstrap.css';
 
 import * as builder from './widget_builder';
 import * as Utils from './widget_utils';

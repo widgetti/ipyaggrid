@@ -1,4 +1,4 @@
-import { Grid } from 'ag-grid';
+import { Grid } from 'ag-grid-community';
 import { LicenseManager } from 'ag-grid-enterprise';
 import * as moduled3 from 'd3';
 

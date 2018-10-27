@@ -38,13 +38,16 @@ class BuilderParams:
         msg = 'height must be an int (number of pixels)'
         assert isinstance(self.obj.height_in, int), msg
 
-        li_theme = ['ag-theme-fresh',
-                    'ag-theme-dark',
-                    'ag-theme-blue',
-                    'ag-theme-material',
-                    'ag-theme-bootstrap',
-                    'ag-theme-balham',
-                    'ag-theme-excel', ]
+        li_theme = [
+            'ag-theme-balham',
+            'ag-theme-balham-dark',
+            'ag-theme-material',
+            'ag-theme-fresh',
+            'ag-theme-dark',
+            'ag-theme-blue',
+            'ag-theme-bootstrap',
+            'ag-theme-excel',  # custom style added by ipyaggrid
+        ]
         msg = 'theme must be one of {}'.format(li_theme)
         assert self.obj.theme in li_theme, msg
 
@@ -188,7 +191,7 @@ class BuilderParams:
             self.obj.width = str(self.obj.width_in) + 'px'
         else:
             self.obj.width = self.obj.width_in
-        
+
         # manage multi options
         self.obj.is_multi = True if self.obj.grid_options_multi != [] else False
 
@@ -205,7 +208,6 @@ class BuilderParams:
 
         # css rules down
         self.obj.css_rules_down = Util.build_css_rules(self.obj.css_rules)
-
 
         if self.obj.is_multi:
             grid_options_multi_2 = []
@@ -300,7 +302,7 @@ class BuilderParams:
 
         if not ('inputs' in menu_in):
             menu_in['inputs'] = []
-        
+
         Util.setup_menu(self.obj, menu_in, menu, grid_options)
 
         self.obj.menu = menu

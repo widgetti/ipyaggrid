@@ -1,8 +1,8 @@
 {
     "name": "ipyaggrid",
-    "version": "0.1.4",
+    "version": "0.1.5",
     "description": "A jupyter widget embedding the ag-grid library",
-    "author": "Louis Raison",
+    "author": "Louis Raison, oscar6echo",
     "main": "dist/index.js",
     "repository": {
         "type": "git",
@@ -60,12 +60,12 @@
         "webpack": "^3.10.0"
     },
     "dependencies": {
-        "@jupyter-widgets/base": "^1.1.8",
-        "@jupyter-widgets/controls": "^1.1.5",
-        "ag-grid": "^18.0.0",
-        "ag-grid-enterprise": "^18.0.0",
+        "@jupyter-widgets/base": "^1.2.2",
+        "@jupyter-widgets/controls": "^1.4.2",
+        "ag-grid-community": "^19.0.0",
+        "ag-grid-enterprise": "^19.0.0",
         "d3": "^5.7.0",
-        "lodash": "^4.17.4",
+        "lodash": "^4.17.11",
         "pako": "^1.0.6"
     }
 }
