@@ -1,8 +1,8 @@
-import { Grid, simpleHttpRequest } from 'ag-grid';
+import { Grid, simpleHttpRequest } from 'ag-grid-community';
 import { LicenseManager } from 'ag-grid-enterprise';
 
-import 'ag-grid/dist/styles/ag-grid.css';
-import 'ag-grid/dist/styles/ag-theme-fresh.css';
+import 'ag-grid-community/dist/styles/ag-grid.css';
+import 'ag-grid-community/dist/styles/ag-theme-fresh.css';
 
 import './style.css';
 
