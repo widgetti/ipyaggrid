@@ -1,5 +1,11 @@
 # ipyaggrid
 
+[![Latest Version](https://img.shields.io/pypi/v/ipyaggrid.svg)](https://pypi.python.org/pypi/ipyaggrid/)
+[![Downloads](https://img.shields.io/pypi/dm/ipyaggrid.svg)](https://pypi.python.org/pypi/ipyaggrid/)
+[![Binder](https://mybinder.org/badge.svg)](https://mybinder.org/v2/gl/DGothrek%2Fipyaggrid/binder-demo)
+
+### Doc
+
 See documentation: [DGothrek.gitlab.io/ipyaggrid](https://DGothrek.gitlab.io/ipyaggrid).
 
 Demo notebooks are in [docs/notebooks](/docs/notebooks).  
