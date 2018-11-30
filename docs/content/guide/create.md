@@ -490,6 +490,15 @@ checkbox is a security against manipulation errors.
 
 For a live demo see this [MyBinder section](#mybinder).
 
+### Sync on Edit
+
+`sync_on_edit: bool, default=False`
+
+If you want to automatically sync the grid after edit, set `sync_on_edit=True`. This will instantly update `.grid_data_out['grid']` with the updated dataframe without the need to use the `.get_grid()` method. Avoid if the dataframe is very large.
+
+
+<<< @/content/code-snippets/sync-on-edit.python
+
 ### Update Data
 
 You can also update the grid bulk data under the constraint that

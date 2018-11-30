@@ -1,0 +1,17 @@
+
+df = pd.DataFrame({'val':['a']})
+column_defs = [{'headerName': 'Col', 'field': 'val', 'editable': True}]
+
+grid_options = {
+    'columnDefs': column_defs
+}
+
+g = Grid(grid_data=df,
+         grid_options=grid_options, 
+         sync_on_edit=True, 
+         width=200,
+         height=100)
+
+display(g)
+
+# upon edit the updated dataframe is: g.grid_data_out['grid']

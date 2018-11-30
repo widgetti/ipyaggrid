@@ -156,7 +156,6 @@ const buildAgGrid = (view, gridData, gridOptions_str, div, sheet, dropdownMulti 
     // listen to edit changes
     if (view.model.get('sync_on_edit')) {
         window.gridOptions = gridOptions;
-        console.log('TOTO');
         gridOptions.api.addEventListener('cellValueChanged', params => {
             // console.log(params);
             exportFunc.exportGrid(gridOptions, view);
