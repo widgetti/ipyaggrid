@@ -155,10 +155,12 @@ const buildAgGrid = (view, gridData, gridOptions_str, div, sheet, dropdownMulti 
 
     // listen to edit changes
     if (view.model.get('sync_on_edit')) {
-        gridOptions.api.onCellValueChanged = () => {
-            console.log('Value edited');
+        window.gridOptions = gridOptions;
+        console.log('TOTO');
+        gridOptions.api.addEventListener('cellValueChanged', params => {
+            // console.log(params);
             exportFunc.exportGrid(gridOptions, view);
-        }
+        });
     }
 
     // listen to _grid_data_down
@@ -230,7 +232,7 @@ const buildAgGridMultiOptions = (view, gridData, gridOptionsMulti, div, sheet) =
         buildAgGrid(view, gridData, gridOptions, div, sheet, dropdownMultiDiv);
     };
 
-    dropdownMulti.onchange = function () {
+    dropdownMulti.onchange = function() {
         div.innerHTML = '';
         const name = dropdownMulti.value;
         console.log(name);
