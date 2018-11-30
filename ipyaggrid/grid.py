@@ -49,6 +49,7 @@ class Grid(wg.DOMWidget):
     quick_filter = Bool(True).tag(sync=True)
     show_toggle_delete = Bool(False).tag(sync=True)
     show_toggle_edit = Bool(False).tag(sync=True)
+    sync_on_edit = Bool(False).tag(sync=True)
     export_mode = Unicode('').tag(sync=True)
     _export_mode = Unicode('').tag(sync=True)  # Used for auto-export
     hide_grid = Bool(False).tag(sync=True)
@@ -92,6 +93,7 @@ class Grid(wg.DOMWidget):
                  export_excel=False,
                  show_toggle_delete=False,
                  show_toggle_edit=False,
+                 sync_on_edit=False,
                  paste_from_excel=False,
                  export_mode='disabled',
                  export_to_df=True,
@@ -133,6 +135,7 @@ class Grid(wg.DOMWidget):
         self.center = center
         self.show_toggle_delete = show_toggle_delete
         self.show_toggle_edit = show_toggle_edit
+        self.sync_on_edit = sync_on_edit
         self.paste_from_excel = paste_from_excel
         self.js_helpers_custom = js_helpers_custom
         self.js_pre_helpers = js_pre_helpers

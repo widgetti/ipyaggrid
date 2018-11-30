@@ -56,6 +56,7 @@ const AgGridModel = widgets.DOMWidgetModel.extend(
                 _grid_data_up: {},
                 show_toggle_delete: false,
                 show_toggle_edit: false,
+                sync_on_edit: false,
                 menu: {},
                 user_params: {},
                 center: false,
