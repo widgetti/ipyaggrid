@@ -207,7 +207,7 @@ class BuilderParams:
             self.obj.grid_options['suppressColumnVirtualisation'] = True
 
         # licence
-        self.obj.license = Util.encode_b64(self.obj.license)
+        # self.obj.license = Util.encode_b64(self.obj.license)
 
         # css rules down
         self.obj.css_rules_down = Util.build_css_rules(self.obj.css_rules)
