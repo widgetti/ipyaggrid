@@ -1,12 +1,12 @@
 
-df = pd.DataFrame({'val':['a']})
+df2 = pd.DataFrame({'val':['a']})
 column_defs = [{'headerName': 'Col', 'field': 'val', 'editable': True}]
 
 grid_options = {
     'columnDefs': column_defs
 }
 
-g = Grid(grid_data=df,
+g = Grid(grid_data=df2,
          grid_options=grid_options, 
          sync_grid=True, 
          width=200,
@@ -14,4 +14,4 @@ g = Grid(grid_data=df,
 
 display(g)
 
-# upon initialization the dataframe is: g.grid_data_out['grid']
+# upon initialization or grid data update the dataframe is: g.grid_data_out['grid']
