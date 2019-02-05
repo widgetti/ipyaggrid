@@ -92,6 +92,9 @@ class BuilderParams:
         msg = 'sync_on_edit must be a boolean'
         assert isinstance(self.obj.sync_on_edit, bool), msg
 
+        msg = 'sync_grid must be a boolean'
+        assert isinstance(self.obj.sync_grid, bool), msg
+
         msg = 'js_helpers_custom must be a str'
         assert isinstance(self.obj.js_helpers_custom, str), msg
 
