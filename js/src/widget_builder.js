@@ -69,8 +69,8 @@ const buildAgGrid = (view, gridData, gridOptions_str, div, sheet, dropdownMulti 
     });
 
     // helpers js
-    let helpersBuiltin = {};
-    let helpersCustom = {};
+    const helpersBuiltin = {};
+    const helpersCustom = {};
     eval(view.model.get('_js_helpers_builtin')); // defines helpersBuiltin
     eval(view.model.get('js_helpers_custom')); // defines helpersCustom
     const helpers = Object.assign({}, helpersBuiltin, helpersCustom);
@@ -139,9 +139,11 @@ const buildAgGrid = (view, gridData, gridOptions_str, div, sheet, dropdownMulti 
         if (view.model.get('_export_mode') === 'delete') {
             const rows = gridOptions.api.getSelectedRows();
             gridOptions.api.updateRowData({ remove: rows });
+            if (view.model.get('sync_grid')) {
+                exportFunc.exportGrid(gridOptions, view);
+            }
         }
         if (view.model.get('_export_mode') === 'rows') {
-            console.log('toto');
             if (gridOptions.enableRangeSelection) exportFunc.exportRowsOfRange(gridOptions, view);
             if ('rowSelection' in gridOptions) exportFunc.exportRows(gridOptions, view);
         }
@@ -165,6 +167,10 @@ const buildAgGrid = (view, gridData, gridOptions_str, div, sheet, dropdownMulti 
     // listen to _grid_data_down
     view.model.on('change:_grid_data_down', () => {
         gridOptions.api.setRowData(view.model.get('_grid_data_down'));
+        if (view.model.get('sync_grid')) {
+            exportFunc.exportGrid(gridOptions, view);
+        }
+
     });
 
     // Add grid listener to auto export
@@ -194,6 +200,12 @@ const buildAgGrid = (view, gridData, gridOptions_str, div, sheet, dropdownMulti 
     if (view.model.get('hide_grid')) {
         view.gridDiv.style = 'display: none';
     }
+
+    // init export to _grid_data_up
+    if (view.model.get('sync_grid')) {
+        exportFunc.exportGrid(gridOptions, view);
+    }
+
 };
 
 /**

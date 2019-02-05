@@ -8,10 +8,10 @@ grid_options = {
 
 g = Grid(grid_data=df2,
          grid_options=grid_options, 
-         sync_on_edit=True, 
+         sync_grid=True, 
          width=200,
          height=100)
 
 display(g)
 
-# upon edit the updated dataframe is: g.grid_data_out['grid']
+# upon initialization or grid data update the dataframe is: g.grid_data_out['grid']

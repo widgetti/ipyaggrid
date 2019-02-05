@@ -406,7 +406,7 @@ It can take 3 values:
   - for `rangeSelection`, three buttons to update keys `rows`, `cols` and `range` with selected data
 - `auto`: identical to `button` mode except `grid_data_out` is continuously updated as your selection changes.
 
-The output type is either a *pandas dataframe* or a *list of Python dict*,
+The output type is either a _pandas dataframe_ or a _list of Python dict_,
 depending on the value of `export_to_df`.
 
 It can be changed after instantiation : `grid.export_to_df=False`
@@ -496,8 +496,15 @@ For a live demo see this [MyBinder section](#mybinder).
 
 If you want to automatically sync the grid after edit, set `sync_on_edit=True`. This will instantly update `.grid_data_out['grid']` with the updated dataframe without the need to use the `.get_grid()` method. Avoid if the dataframe is very large.
 
-
 <<< @/content/code-snippets/sync-on-edit.python
+
+### Sync Grid
+
+`sync_grid: bool, default=True`
+
+If you want to automatically sync the whole grid after initialization, grid data update, set `sync_grid=True`. This will automatically update `.grid_data_out['grid']` with the updated dataframe without the need to use the `.get_grid()` method. Avoid if the dataframe is very large.
+
+<<< @/content/code-snippets/sync-grid.python
 
 ### Update Data
 
