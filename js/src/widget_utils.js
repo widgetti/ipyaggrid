@@ -261,6 +261,7 @@ const setupShowToggleEdit = (view, menu, sheet, input) => {
     //         editMode(view, view.gridOptions, false);
     //     }
     // };
+    window.editable = false;
 
     inputEdit.onchange = () => {
         console.log('edit - onchange');
@@ -274,13 +275,15 @@ const setupShowToggleEdit = (view, menu, sheet, input) => {
 
 function editMode(view, gridOptions, editable) {
     if (editable) {
-        gridOptions.columnDefs.forEach(col => {
-            col.editable = true;
-        });
+        window.editable = true;
+        // gridOptions.columnDefs.forEach(col => {
+        //     col.editable = true;
+        // });
     } else {
-        gridOptions.columnDefs.forEach(col => {
-            col.editable = false;
-        });
+        window.editable = false;
+        // gridOptions.columnDefs.forEach(col => {
+        //     col.editable = false;
+        // });
     }
     gridOptions.api.setColumnDefs(gridOptions.columnDefs);
     if (view.model.get('columns_fit') === 'size_to_fit') {
@@ -292,6 +295,7 @@ function editMode(view, gridOptions, editable) {
         });
         gridOptions.columnApi.autoSizeColumns(allColumnIds);
     }
+    window.gridOptions = gridOptions;
 }
 
 /**

@@ -256,6 +256,11 @@ class BuilderParams:
         """
         """
 
+        if self.obj.show_toggle_edit:
+            grid_options['defaultColDef']={'editable':"""function(params){
+                return window.editable;
+                }"""}
+
         if self.obj.paste_from_excel:
             grid_options['processDataFromClipboard'] = """function(params){
                 const { data } = params;
