@@ -257,9 +257,13 @@ class BuilderParams:
         """
 
         if self.obj.show_toggle_edit:
-            grid_options['defaultColDef']={'editable':"""function(params){
-                return window.editable;
-                }"""}
+            func_update_edit = """function(params){
+                    return window.agGridOptions["""+str(self.obj._id)+"""].editableCustom;
+                    }"""
+            if 'defaultColDef' in grid_options:
+                grid_options['defaultColDef']['editable'] = func_update_edit
+            else:
+                grid_options['defaultColDef'] = {'editable': func_update_edit}
 
         if self.obj.paste_from_excel:
             grid_options['processDataFromClipboard'] = """function(params){
