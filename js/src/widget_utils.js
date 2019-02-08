@@ -56,7 +56,7 @@ const setupButtons = (view, menu, sheet, gridOptions, helpers) => {
         } else {
             but.id = `jupyter-button flex-child-${button.name.toLowerCase().replace(/\s/g, '-')}-${
                 view._id
-            }`;
+                }`;
             but.className = but.id;
             sheet.insertRule(button.css, 0);
             menu.buttonDivs.push(but);
@@ -148,7 +148,7 @@ const setupShowToggleDelete = (view, menu, sheet, input) => {
     divDelete.style = 'display:inline-flex;';
     divDelete.className = `div-delete flex-child-${input.name.toLowerCase().replace(/\s/g, '-')}-${
         view._id
-    }`;
+        }`;
     const labelDiv = document.createElement('div');
     labelDiv.style = 'width:30px;height:20px';
     const labelDelete = document.createElement('label');
@@ -236,7 +236,7 @@ const setupShowToggleEdit = (view, menu, sheet, input) => {
     divEdit.style = 'display:inline-flex';
     divEdit.className = `div-edit flex-child-${input.name.toLowerCase().replace(/\s/g, '-')}-${
         view._id
-    }`;
+        }`;
     const labelDiv = document.createElement('div');
     labelDiv.style = 'width:30px;height:20px';
     const labelEdit = document.createElement('label');
@@ -262,6 +262,12 @@ const setupShowToggleEdit = (view, menu, sheet, input) => {
     //     }
     // };
 
+    const id = view.model.get('_id');
+    if (typeof window.agGridOptions === 'undefined') {
+        window.agGridOptions = {};
+    }
+    window.agGridOptions[id] = { editableCustom: false };
+
     inputEdit.onchange = () => {
         console.log('edit - onchange');
         if (inputEdit.checked) {
@@ -273,14 +279,17 @@ const setupShowToggleEdit = (view, menu, sheet, input) => {
 };
 
 function editMode(view, gridOptions, editable) {
+    const id = view.model.get('_id');
     if (editable) {
-        gridOptions.columnDefs.forEach(col => {
-            col.editable = true;
-        });
+        window.agGridOptions[id].editableCustom = true;
+        // gridOptions.columnDefs.forEach(col => {
+        //     col.editable = true;
+        // });
     } else {
-        gridOptions.columnDefs.forEach(col => {
-            col.editable = false;
-        });
+        window.agGridOptions[id].editableCustom = false;
+        // gridOptions.columnDefs.forEach(col => {
+        //     col.editable = false;
+        // });
     }
     gridOptions.api.setColumnDefs(gridOptions.columnDefs);
     if (view.model.get('columns_fit') === 'size_to_fit') {
