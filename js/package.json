@@ -1,6 +1,6 @@
 {
     "name": "ipyaggrid",
-    "version": "0.1.10",
+    "version": "0.1.11",
     "description": "A jupyter widget embedding the ag-grid library",
     "author": "Louis Raison, oscar6echo",
     "license": "MIT",
@@ -17,7 +17,10 @@
     ],
     "files": [
         "src/**/*.js",
-        "dist/*.js"
+        "dist/*.js",
+        "src/styles/**/*.css",
+        "src/styles/**/*.scss",
+        "src/styles/icons/*.svg"
     ],
     "jupyterlab": {
         "extension": "src/labplugin"
