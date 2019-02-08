@@ -261,11 +261,12 @@ const setupShowToggleEdit = (view, menu, sheet, input) => {
     //         editMode(view, view.gridOptions, false);
     //     }
     // };
+
     const id = view.model.get('_id');
-    if (typeof window.agGridOptions == "undefined") {
-        window.agGridOptions = {}
+    if (typeof window.agGridOptions === 'undefined') {
+        window.agGridOptions = {};
     }
-    window.agGridOptions[id] = { 'editableCustom': false };
+    window.agGridOptions[id] = { editableCustom: false };
 
     inputEdit.onchange = () => {
         console.log('edit - onchange');
@@ -300,7 +301,6 @@ function editMode(view, gridOptions, editable) {
         });
         gridOptions.columnApi.autoSizeColumns(allColumnIds);
     }
-    window.gridOptions = gridOptions;
 }
 
 /**

@@ -258,8 +258,8 @@ class BuilderParams:
 
         if self.obj.show_toggle_edit:
             func_update_edit = """function(params){
-                    return window.agGridOptions["""+str(self.obj._id)+"""].editableCustom;
-                    }"""
+                return window.agGridOptions["""+str(self.obj._id)+"""].editableCustom;
+                }"""
             if 'defaultColDef' in grid_options:
                 grid_options['defaultColDef']['editable'] = func_update_edit
             else:
