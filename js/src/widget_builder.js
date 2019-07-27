@@ -69,8 +69,8 @@ const buildAgGrid = (view, gridData, gridOptions_str, div, sheet, dropdownMulti 
     });
 
     // helpers js
-    const helpersBuiltin = {};
-    const helpersCustom = {};
+    let helpersBuiltin = {};
+    let helpersCustom = {};
     eval(view.model.get('_js_helpers_builtin')); // defines helpersBuiltin
     eval(view.model.get('js_helpers_custom')); // defines helpersCustom
     const helpers = Object.assign({}, helpersBuiltin, helpersCustom);
@@ -170,7 +170,6 @@ const buildAgGrid = (view, gridData, gridOptions_str, div, sheet, dropdownMulti 
         if (view.model.get('sync_grid')) {
             exportFunc.exportGrid(gridOptions, view);
         }
-
     });
 
     // Add grid listener to auto export
@@ -205,7 +204,6 @@ const buildAgGrid = (view, gridData, gridOptions_str, div, sheet, dropdownMulti 
     if (view.model.get('sync_grid')) {
         exportFunc.exportGrid(gridOptions, view);
     }
-
 };
 
 /**

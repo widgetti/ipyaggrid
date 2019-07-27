@@ -4,8 +4,8 @@ const { version } = require('./package.json');
 // Custom webpack rules are generally the same for all webpack bundles, hence
 // stored in a separate local variable.
 const rules = [
-    { test: /\.css$/, use: ['style-loader', 'css-loader'] },
     { test: /\.scss$/, use: ['style-loader', 'css-loader', 'sass-loader'] },
+    { test: /\.css$/, use: ['style-loader', 'css-loader'] },
     { test: /\.js$/, loader: 'babel-loader', exclude: /node_modules/ },
     {
         test: /\.svg$/,
@@ -21,6 +21,13 @@ const rules = [
         ],
     },
 ];
+
+// const mode = 'production';
+
+const performance = {
+    maxEntrypointSize: 3e6,
+    maxAssetSize: 3e6,
+};
 
 module.exports = [
     {
@@ -38,6 +45,7 @@ module.exports = [
             path: path.resolve(__dirname, '..', 'ipyaggrid', 'static'),
             libraryTarget: 'amd',
         },
+        // mode,
     },
     {
         // Bundle for the notebook containing the custom widget views and models
@@ -56,7 +64,8 @@ module.exports = [
         module: {
             rules,
         },
-
+        // mode,
+        performance,
         externals: ['@jupyter-widgets/base', '@jupyter-widgets/controls'],
     },
     {
@@ -87,6 +96,8 @@ module.exports = [
         module: {
             rules,
         },
+        // mode,
+        performance,
         externals: ['@jupyter-widgets/base', '@jupyter-widgets/controls'],
     },
 ];

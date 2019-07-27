@@ -17,7 +17,7 @@ import { version } from '../package.json';
 
 // styles
 import './styles/ipywidgets/widgets.css';
-import './styles/ag-theme-excel.scss';
+import './styles/ag-theme-excel.css';
 import './styles/switch_edit.css';
 import './styles/switch_delete.css';
 import './styles/menu_div.css';

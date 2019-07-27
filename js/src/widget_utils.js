@@ -1,11 +1,14 @@
+import * as moduled3 from 'd3';
 import { gzip } from './widget_compress';
 import * as exportFunctions from './widget_export';
-import * as moduled3 from 'd3';
 
 // make available to js eval-ed
 const { exportFunc } = exportFunctions;
-const { d3 } = moduled3;
+const d3 = moduled3;
 
+console.log('d3 loaded');
+console.log(d3);
+window.d3 = d3;
 /**
  * Builds Attach the button names and their actions to real buttons.
  * View and gridOptions are necessary for evaluation of button actions.
@@ -56,7 +59,7 @@ const setupButtons = (view, menu, sheet, gridOptions, helpers) => {
         } else {
             but.id = `jupyter-button flex-child-${button.name.toLowerCase().replace(/\s/g, '-')}-${
                 view._id
-                }`;
+            }`;
             but.className = but.id;
             sheet.insertRule(button.css, 0);
             menu.buttonDivs.push(but);
@@ -148,7 +151,7 @@ const setupShowToggleDelete = (view, menu, sheet, input) => {
     divDelete.style = 'display:inline-flex;';
     divDelete.className = `div-delete flex-child-${input.name.toLowerCase().replace(/\s/g, '-')}-${
         view._id
-        }`;
+    }`;
     const labelDiv = document.createElement('div');
     labelDiv.style = 'width:30px;height:20px';
     const labelDelete = document.createElement('label');
@@ -236,7 +239,7 @@ const setupShowToggleEdit = (view, menu, sheet, input) => {
     divEdit.style = 'display:inline-flex';
     divEdit.className = `div-edit flex-child-${input.name.toLowerCase().replace(/\s/g, '-')}-${
         view._id
-        }`;
+    }`;
     const labelDiv = document.createElement('div');
     labelDiv.style = 'width:30px;height:20px';
     const labelEdit = document.createElement('label');
