@@ -10,7 +10,6 @@ Set the **same** Javascript version in the following files.
 _WARNING_: This is a **manual** sync.
 
 + `ipyaggrid/js/package.json`
-+ `ipyaggrid/__meta__.py`
 
 Set the Python version in file:
 + `ipyaggrid/__meta__.py`
