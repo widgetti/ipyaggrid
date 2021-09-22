@@ -6,6 +6,7 @@ import gzip
 
 import datetime as dt
 import pandas as pd
+import numpy as np
 import simplejson as json
 
 from .flexbox import FlexboxCSS
@@ -43,6 +44,8 @@ class Util:
     def json_serial(obj):
         if isinstance(obj, (dt.datetime, dt.date, pd.Timestamp)):
             return obj.isoformat()
+        elif isinstance(obj, np.generic):
+            return obj.item()
         else:
             raise TypeError(
                 "Unserializable object {} of type {}".format(obj, type(obj))
