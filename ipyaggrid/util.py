@@ -1,4 +1,3 @@
-
 import os
 import re
 import collections
@@ -42,12 +41,12 @@ class Util:
 
     @staticmethod
     def json_serial(obj):
-        """
-        """
         if isinstance(obj, (dt.datetime, dt.date, pd.Timestamp)):
             return obj.isoformat()
-
-        return obj
+        else:
+            raise TypeError(
+                "Unserializable object {} of type {}".format(obj, type(obj))
+            )
 
     @staticmethod
     def strip_comments(code):
