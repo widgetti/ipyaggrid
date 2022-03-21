@@ -8,7 +8,7 @@
 
 See documentation: [DGothrek.gitlab.io/ipyaggrid](https://DGothrek.gitlab.io/ipyaggrid).
 
-Demo notebooks are in [docs/notebooks](/docs/notebooks) and available on mybinder (see link above).  
+Demo notebooks are in [docs/notebooks](/docs/notebooks) and available on mybinder (see link above).
 
 ### Credits
 
