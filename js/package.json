@@ -1,6 +1,6 @@
 {
     "name": "ipyaggrid",
-    "version": "0.2.1",
+    "version": "0.2.2",
     "description": "A jupyter widget embedding the ag-grid library",
     "author": "Louis Raison, oscar6echo",
     "license": "MIT",
@@ -22,18 +22,27 @@
         "src/styles/icons/*.svg"
     ],
     "jupyterlab": {
-        "extension": "src/labplugin"
+        "extension": "src/labplugin",
+        "outputDir": "../ipyaggrid/labextension",
+        "sharedPackages": {
+            "@jupyter-widgets/base": {
+                "bundled": false,
+                "singleton": true
+            }
+        }
     },
     "scripts": {
-        "clean": "rimraf dist/ && rimraf ../ipyaggrid/static/",
+        "clean": "rimraf dist/ && rimraf ../ipyaggrid/nbextension/ && rimraf ../ipyaggrid/labextension/",
         "cleanall": "npm run clean && rimraf node_modules/",
         "prepare": "webpack --mode production",
         "watch": "watch 'webpack --mode development' src/",
         "format": "prettier --write '**/*.{js,jsx}'",
         "lint": "eslint '**/*.{js,jsx}' --quiet",
-        "test": "echo \"Error: no test specified toto\"",
-        "dev": "webpack --mode development --watch",
-        "build": "webpack --mode production"
+        "test": "echo \"Error: no test specified\"",
+        "dev": "webpack --mode=development && npm run build:labextension:dev",
+        "build": "webpack --mode=production && npm run build:labextension",
+        "build:labextension": "jupyter labextension build .",
+        "build:labextension:dev": "jupyter labextension build --development True ."
     },
     "dependencies": {
         "@jupyter-widgets/base": "^3.0.0",
@@ -45,6 +54,7 @@
         "pako": "^1.0.10"
     },
     "devDependencies": {
+        "@jupyterlab/builder": "^3.2.3",
         "babel-core": "^6.26.3",
         "babel-loader": "^7.1.5",
         "babel-preset-env": "^1.7.0",

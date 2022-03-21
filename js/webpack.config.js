@@ -42,8 +42,9 @@ module.exports = [
         entry: './src/extension.js',
         output: {
             filename: 'extension.js',
-            path: path.resolve(__dirname, '..', 'ipyaggrid', 'static'),
+            path: path.resolve(__dirname, '..', 'ipyaggrid', 'nbextension'),
             libraryTarget: 'amd',
+            publicPath: '',
         },
         // mode,
     },
@@ -57,8 +58,9 @@ module.exports = [
         entry: './src/index.js',
         output: {
             filename: 'index.js',
-            path: path.resolve(__dirname, '..', 'ipyaggrid', 'static'),
+            path: path.resolve(__dirname, '..', 'ipyaggrid', 'nbextension'),
             libraryTarget: 'amd',
+            publicPath: '',
         },
         devtool: 'source-map',
         module: {

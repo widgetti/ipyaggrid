@@ -22,7 +22,7 @@ $ conda create -n dev-ipyaggrid python=3
 $ source activate dev-ipyaggrid
 # install dependencies
 (dev-ipyaggrid) $ pip install notebook
-(dev-ipyaggrid) $ pip install -r requirements.txt
+(dev-ipyaggrid) $ pip install -r ipyaggrid/requirements.txt
 ```
 
 Additionally for JupyterLab:

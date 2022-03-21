@@ -11,6 +11,8 @@
 **/node_modules/
 
 */static/
+ipyaggrid/nbextension/
+ipyaggrid/labextension/
 js/dist/
 
 build/

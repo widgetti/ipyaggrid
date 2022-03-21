@@ -18,7 +18,7 @@ from setuptools import setup, find_packages
 
 packages = find_packages()
 module = packages[0]
-print('module = {}'.format(module))
+# print('module = {}'.format(module))
 
 
 meta_ns = {}

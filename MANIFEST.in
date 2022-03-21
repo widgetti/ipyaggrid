@@ -1,6 +1,7 @@
 
 # js
-recursive-include ipyaggrid/static *.*
+recursive-include ipyaggrid/nbextension *.*
+recursive-include ipyaggrid/labextension *.*
 recursive-include ipyaggrid/js *.js
 
 # Misc

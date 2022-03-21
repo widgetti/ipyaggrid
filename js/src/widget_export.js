@@ -10,16 +10,23 @@ const exportFunc = {};
 exportFunc.exportRangeData = (options, view) => {
     let rangeSelection;
     try {
-        rangeSelection = options.api.getRangeSelections()[0];
+        console.log(options.api.getCellRanges())
+        rangeSelection = options.api.getCellRanges();
     } catch (e) {
         console.log('No cells selected.');
         return;
     }
+
+    console.log(rangeSelection)
+    console.log(rangeSelection[0].startRow)
+    console.log(rangeSelection[0].endRow)
+    rangeSelection = rangeSelection[0];
+    console.log(rangeSelection)
     const cols = findCorrectColumns(rangeSelection.columns, options);
     const rows = [];
 
-    const id1 = rangeSelection.start.rowIndex;
-    const id2 = rangeSelection.end.rowIndex;
+    const id1 = rangeSelection.startRow.rowIndex;
+    const id2 = rangeSelection.endRow.rowIndex;
     for (let id = Math.min(id1, id2); id <= Math.max(id1, id2); id += 1) {
         const row = options.api.getDisplayedRowAtIndex(id);
         rows.push(row);
@@ -112,12 +119,12 @@ function cleanRowNode(node, names) {
 }
 
 exportFunc.exportRowsOfRange = (options, view) => {
-    const rangeSelections = options.api.getRangeSelections();
+    const rangeSelections = options.api.getCellRanges();
     const rows = [];
     const ids = {};
     rangeSelections.forEach(rangeSelection => {
-        const i1 = rangeSelection.start.rowIndex;
-        const i2 = rangeSelection.end.rowIndex;
+        const i1 = rangeSelection.startRow.rowIndex;
+        const i2 = rangeSelection.endRow.rowIndex;
         const is = Math.min(i1, i2);
         const ie = Math.max(i1, i2);
         for (let i = is; i <= ie; i += 1) {
@@ -143,7 +150,7 @@ function getCol(col, options) {
 exportFunc.exportColumns = (options, view) => {
     let rangeSelection;
     try {
-        rangeSelection = options.api.getRangeSelections()[0];
+        rangeSelection = options.api.getCellRanges()[0];
     } catch (e) {
         console.log('No cells selected.');
         return;

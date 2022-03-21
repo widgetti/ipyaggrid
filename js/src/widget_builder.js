@@ -176,11 +176,11 @@ const buildAgGrid = (view, gridData, gridOptions_str, div, sheet, dropdownMulti 
     if (view.model.get('export_mode') === 'auto') {
         if (gridOptions.enableRangeSelection) {
             gridOptions.api.addEventListener('rangeSelectionChanged', event => {
-                if (event.finished) {
+                // if (event.finished) {
                     exportFunc.exportRangeData(gridOptions, view);
                     exportFunc.exportColumns(gridOptions, view);
                     exportFunc.exportRowsOfRange(gridOptions, view);
-                }
+                // }
             });
         }
         if ('rowSelection' in gridOptions) {

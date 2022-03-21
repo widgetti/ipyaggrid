@@ -1,3 +1,4 @@
+import glob
 
 def _get_version(version_info):
     """
@@ -19,11 +20,11 @@ __name__ = 'ipyaggrid'
 name_url = __name__.replace('_', '-')
 
 
-version_info = (0, 2, 1)
+version_info = (0, 2, 2)
 __version__ = _get_version(version_info)
 
 # must be MANUALLY synced wih js.package.json.version
-version_js_info = (0, 2, 1)
+version_js_info = (0, 2, 2)
 __version_js__ = _get_version(version_js_info)
 
 
@@ -51,15 +52,18 @@ __classifiers__ = ['Development Status :: 4 - Beta',
 __include_package_data__ = True
 __package_data__ = {}
 __data_files__ = [
-    ('share/jupyter/nbextensions/ipyaggrid', [
-        'ipyaggrid/static/extension.js',
-        'ipyaggrid/static/index.js',
-        'ipyaggrid/static/index.js.map',
-    ]),
     # classic notebook extension
+    ('share/jupyter/nbextensions/ipyaggrid', [
+        'ipyaggrid/nbextension/extension.js',
+        'ipyaggrid/nbextension/index.js',
+        'ipyaggrid/nbextension/index.js.map',
+    ]),
     ('etc/jupyter/nbconfig/notebook.d', [
         'ipyaggrid/ipyaggrid.json'
     ]),
+    # Lab Extension
+    ('share/jupyter/labextensions/ipyaggrid', [x for x in glob.iglob("ipyaggrid/labextension/**", recursive=True)]),
+    ('share/jupyter/labextensions/ipyaggrid', ['install.json']),
 ]
 __zip_safe__ = False
 __entry_points__ = {}

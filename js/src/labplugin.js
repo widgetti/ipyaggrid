@@ -3,7 +3,7 @@ import * as base from '@jupyter-widgets/base';
 import * as myWidget from './widget';
 import { version } from './index';
 
-const id = 'ipyaggrid';
+const id = 'ipyaggrid:plugin';
 const requires = [base.IJupyterWidgetRegistry];
 const autoStart = true;
 
