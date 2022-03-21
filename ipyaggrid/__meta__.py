@@ -1,4 +1,5 @@
 import glob
+from os.path import isdir
 
 def _get_version(version_info):
     """
@@ -62,7 +63,7 @@ __data_files__ = [
         'ipyaggrid/ipyaggrid.json'
     ]),
     # Lab Extension
-    ('share/jupyter/labextensions/ipyaggrid', [x for x in glob.iglob("ipyaggrid/labextension/**", recursive=True)]),
+    ('share/jupyter/labextensions/ipyaggrid', [x for x in glob.iglob("ipyaggrid/labextension/**", recursive=True) if not isdir(x)]),
     ('share/jupyter/labextensions/ipyaggrid', ['install.json']),
 ]
 __zip_safe__ = False
