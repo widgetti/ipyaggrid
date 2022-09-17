@@ -47,8 +47,8 @@
     "dependencies": {
         "@jupyter-widgets/base": "^3.0.0",
         "@jupyter-widgets/controls": "^2.0.0",
-        "ag-grid-community": "21.1.0",
-        "ag-grid-enterprise": "21.1.0",
+        "ag-grid-community": "24.1.0",
+        "ag-grid-enterprise": "24.1.0",
         "d3": "^5.9.7",
         "lodash": "^4.17.15",
         "pako": "^1.0.10"
