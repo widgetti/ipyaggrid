@@ -1,0 +1,10 @@
+name: dev-ipyaggrid
+channels:
+  - https://conda.anaconda.org/conda-forge/
+dependencies:
+  - python>=3.10
+  - jupyterlab
+  - nodejs>=18.9.0
+  - pip
+  - pip:
+    - notebook
