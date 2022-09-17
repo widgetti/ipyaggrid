@@ -130,7 +130,6 @@ const buildAgGrid = (view, gridData, gridOptions_str, div, sheet, dropdownMulti 
 
     // default behavior
     gridOptions.api.setQuickFilter('');
-    gridOptions.api.doLayout();
 
     // END MAIN SEQUENCE
 
