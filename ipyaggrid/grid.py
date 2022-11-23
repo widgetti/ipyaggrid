@@ -72,6 +72,7 @@ class Grid(wg.DOMWidget):
     license = Unicode('').tag(sync=True)
 
     grid_data_out = Dict({}).tag(sync=False)
+    _cell_updates = List([]).tag(sync=True)
 
     params = []
 
@@ -325,3 +326,17 @@ class Grid(wg.DOMWidget):
         dic = json.loads(self.js_helpers)
         for k, v in dic.items():
             print('\n' + k+' : '+v)
+
+    def update_cells(self, updates):
+        """
+        Updates specific cells of the grid. Preserves the undo/redo stack.
+
+        ## Arguments
+
+        * `updates`: list of dicts, each dict containing the row_id, field and value of a cell. e.g:
+            [{"row_id": 0, "field": "model", "value": "new value"},
+             {"row_id": 0, "field": "model", "value": "another new value"}]
+
+        Note: row_id is the index of the row, this can be changed by setting 'getRowNodeId' in 'grid_options'.
+        """
+        self._cell_updates = updates

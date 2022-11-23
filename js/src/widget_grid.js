@@ -76,6 +76,7 @@ const AgGridModel = widgets.DOMWidgetModel.extend(
 
                 _counter_update_data: 0,
                 _export_mode: '',
+                _cell_updates: [],
             });
         },
     },
