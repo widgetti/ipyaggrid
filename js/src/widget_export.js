@@ -277,17 +277,12 @@ function findCorrectColumns(columns, options) {
                 let name;
                 if (col.groupId) {
                     try {
-                        console.log(col);
-                        console.log(col.originalColumnGroup);
-                        console.log(col.originalColumnGroup.colGroupDef);
-                        console.log(col.originalColumnGroup.colGroupDef.headerName);
                         if (col.originalColumnGroup.colGroupDef.headerName) {
                             name = col.originalColumnGroup.colGroupDef.headerName;
                         } else {
                             name = '';
                         }
                     } catch (exc) {
-                        console.log('Caught exception');
                         console.error(exc);
                         name = '';
                     }
