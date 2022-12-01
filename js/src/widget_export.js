@@ -276,9 +276,14 @@ function findCorrectColumns(columns, options) {
                 col = col.parent;
                 let name;
                 if (col.groupId) {
-                    if (col.originalColumnGroup.colGroupDef.headerName) {
-                        name = col.originalColumnGroup.colGroupDef.headerName;
-                    } else {
+                    try {
+                        if (col.originalColumnGroup.colGroupDef.headerName) {
+                            name = col.originalColumnGroup.colGroupDef.headerName;
+                        } else {
+                            name = '';
+                        }
+                    } catch (exc) {
+                        console.error(exc);
                         name = '';
                     }
                     column_header.push(name);
