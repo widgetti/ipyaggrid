@@ -20,6 +20,8 @@ JSONfunc.parse = function(str, helpers) {
         } else if (valueCompact.substring(0, 8) === 'helpers.') {
             r = eval(value);
             return r;
+        } else if (valueCompact.startsWith('__js__:')) {
+            return Function(`"use strict"; return (${value.slice(7)})`)();
         }
         return value;
     });
