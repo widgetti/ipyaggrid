@@ -203,6 +203,15 @@ const buildAgGrid = (view, gridData, gridOptions_str, div, sheet, dropdownMulti 
     if (view.model.get('sync_grid')) {
         exportFunc.exportGrid(gridOptions, view);
     }
+
+    // update cells
+    view.model.on('change:_cell_updates', () => {
+        view.model.get('_cell_updates').forEach(({row_id, field, value}) => {
+            const rowNode = gridOptions.api.getRowNode(row_id);
+            rowNode.setDataValue(field, value);
+        });
+        view.model.set('_cell_updates', [])
+    });
 };
 
 /**
