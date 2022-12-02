@@ -6,8 +6,6 @@ import * as exportFunctions from './widget_export';
 const { exportFunc } = exportFunctions;
 const d3 = moduled3;
 
-console.log('d3 loaded');
-console.log(d3);
 window.d3 = d3;
 /**
  * Builds Attach the button names and their actions to real buttons.
