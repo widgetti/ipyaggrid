@@ -11,7 +11,7 @@ module.exports = {
             indexName: 'ipyaggrid'
         },
         
-        repo: 'https://gitlab.com/dgothrek/ipyaggrid',
+        repo: 'https://github.com/widgetti/ipyaggrid',
         editLinks: false,
         editLinkText: 'Edit this page on GitLab',
         lastUpdated: 'Last Updated',
