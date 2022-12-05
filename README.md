@@ -12,7 +12,8 @@ Demo notebooks are in [docs/notebooks](/docs/notebooks) and available on mybinde
 
 ### Credits
 
-This repo is the result from a collaboration between [Louis Raison](https://gitlab.com/DGothrek) and [oscar6echo](https://gitlab.com/oscar6echo).
+ipyaggrid was created by [Louis Raison](https://gitlab.com/DGothrek) and [oscar6echo](https://gitlab.com/oscar6echo) and originally maintained at https://gitlab.com/DGothrek/ipyaggrid .
 
-For more context, read the article [Harnessing the power of ag-Grid in Jupyter](https://medium.com/@olivier.borderies/harnessing-the-power-of-ag-grid-in-jupyter-3ae27fb21012).
+For more context, read the original article [Harnessing the power of ag-Grid in Jupyter](https://medium.com/@olivier.borderies/harnessing-the-power-of-ag-grid-in-jupyter-3ae27fb21012).
 
+[Mario Buikhuizen](https://github.com/mariobuikhuizen) and [Maarten Breddels](https://github.com/maartenbreddels) took over maintenance in 2022.
