@@ -45,8 +45,8 @@
         "build:labextension:dev": "jupyter labextension build --development True ."
     },
     "dependencies": {
-        "@jupyter-widgets/base": "^3.0.0",
-        "@jupyter-widgets/controls": "^2.0.0",
+        "@jupyter-widgets/base": "^3.0.0 || ^4 || ^6",
+        "@jupyter-widgets/controls": "^2.0.0 || ^3 || ^4 || ^5",
         "ag-grid-community": "28.1.1",
         "ag-grid-enterprise": "28.1.1",
         "d3": "^5.9.7",
@@ -54,10 +54,9 @@
         "pako": "^1.0.10"
     },
     "devDependencies": {
+        "@babel/core": "^7.4.4",
+        "@babel/preset-env": "^7.4.4",
         "@jupyterlab/builder": "^3.2.3",
-        "babel-core": "^6.26.3",
-        "babel-loader": "^7.1.5",
-        "babel-preset-env": "^1.7.0",
         "css-loader": "^3.1.0",
         "eslint": "^5.16.0",
         "eslint-config-airbnb": "^17.1.1",
