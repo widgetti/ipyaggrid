@@ -1,0 +1,24 @@
+name: Docs
+
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - 'docs/**/*'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Build docs
+        run: (cd docs && npm install && npm run docs:build)
+      - name: Add .nojekyll
+        run: (cd public && touch .nojekyll)
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GH_TOKEN }}
+          publish_dir: ./public
