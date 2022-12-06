@@ -24,11 +24,11 @@ import './styles/menu_div.css';
 
 const semver_range = `~${version}`;
 
-const AgGridModel = widgets.DOMWidgetModel.extend(
-    {
-        defaults() {
-            return extend(AgGridModel.__super__.defaults.call(this), {
-                _model_name: 'AgGridModel',
+class AgGridModel extends widgets.DOMWidgetModel {
+    defaults() {
+        return {
+            ...super.defaults(),
+            ...{                _model_name: 'AgGridModel',
                 _view_name: 'AgGridView',
                 _model_module: 'ipyaggrid',
                 _view_module: 'ipyaggrid',
@@ -77,26 +77,22 @@ const AgGridModel = widgets.DOMWidgetModel.extend(
                 _counter_update_data: 0,
                 _export_mode: '',
                 _cell_updates: [],
-            });
-        },
-    },
-    {
-        serializers: _.extend(
-            {
-                _grid_data_down: { deserialize: Utils.deserialize_data },
-                _grid_data_up: { serialize: Utils.serialize_data },
-                _grid_options_mono_down: { deserialize: Utils.deserialize_options },
-                _grid_options_multi_down: { deserialize: Utils.deserialize_multi_options },
-                _js_helpers_builtin: { deserialize: Utils.deserialize_options },
-                js_helpers: { deserialize: Utils.deserialize_options },
-                js_helpers_custom: { deserialize: Utils.deserialize_options },
             },
-            widgets.DOMWidgetModel.serializers
-        ),
+        };
     }
-);
+}
 
-const AgGridView = widgets.DOMWidgetView.extend({
+AgGridModel.serializers = {
+    ...widgets.DOMWidgetModel.serializers,
+    _grid_data_down: { deserialize: Utils.deserialize_data },
+    _grid_data_up: { serialize: Utils.serialize_data },
+    _grid_options_mono_down: { deserialize: Utils.deserialize_options },
+    _grid_options_multi_down: { deserialize: Utils.deserialize_multi_options },
+    _js_helpers_builtin: { deserialize: Utils.deserialize_options },
+    js_helpers_custom: { deserialize: Utils.deserialize_options },
+};
+
+class AgGridView extends widgets.DOMWidgetView {
     render() {
         this._id = this.model.get('_id');
         const div_widget = this.el;
@@ -137,7 +133,7 @@ const AgGridView = widgets.DOMWidgetView.extend({
             );
         }
         console.log('end ipyaggrid render');
-    },
-});
+    }
+}
 
 export { AgGridModel, AgGridView };

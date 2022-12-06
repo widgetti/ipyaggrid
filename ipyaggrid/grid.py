@@ -59,7 +59,7 @@ class Grid(wg.DOMWidget):
         sync=True, to_json=Util.options_to_json)
     js_helpers_custom = Unicode('').tag(
         sync=True, to_json=Util.options_to_json)
-    js_helpers = Unicode('').tag(sync=True, to_json=Util.options_to_json)
+    js_helpers = Unicode('').tag(sync=True)
     js_pre_helpers = List([]).tag(sync=True)
     js_pre_grid = List([]).tag(sync=True)
     js_post_grid = List([]).tag(sync=True)

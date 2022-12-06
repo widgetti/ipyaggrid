@@ -6,7 +6,6 @@ const { version } = require('./package.json');
 const rules = [
     { test: /\.scss$/, use: ['style-loader', 'css-loader', 'sass-loader'] },
     { test: /\.css$/, use: ['style-loader', 'css-loader'] },
-    { test: /\.js$/, loader: 'babel-loader', exclude: /node_modules/ },
     {
         test: /\.svg$/,
         use: [
