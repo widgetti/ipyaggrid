@@ -19,20 +19,20 @@ jobs:
           python-version: 3.7
       - name: Install dependencies
         run: pip install wheel jupyterlab
+      - name: Change version
+        run: python .github/ci_version.py
       - name: build js
         run: (cd js && npm install && npm run build:labextension)
       - name: Package
         run: python setup.py bdist_wheel --universal
       - name: Test Package
         run: pip install dist/*.whl && python -c "import ipyaggrid"
-      - name: cp latest
-        run: mkdir latest && cp `find dist -name "*whl" |head -n1` latest/ipyaggrid-latest-py2.py3-none-any.whl
       - name: Publish a Python distribution to S3
         continue-on-error: true
         uses: prewk/s3-cp-action@v2
         with:
           aws_access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          source: "./latest/"
-          dest: "s3://widgetti.pub/ipyaggrid/${GITHUB_REF_NAME}"
+          source: "./dist/"
+          dest: "s3://widgetti.pub/ipyaggrid/"
           flags: --recursive
