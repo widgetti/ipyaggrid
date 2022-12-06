@@ -1,4 +1,5 @@
 import glob
+import os
 from os.path import isdir
 
 def _get_version(version_info):
@@ -63,8 +64,14 @@ __data_files__ = [
         'ipyaggrid/ipyaggrid.json'
     ]),
     # Lab Extension
-    ('share/jupyter/labextensions/ipyaggrid', [x for x in glob.iglob("ipyaggrid/labextension/**", recursive=True) if not isdir(x)]),
     ('share/jupyter/labextensions/ipyaggrid', ['install.json']),
 ]
+
+# Lab Extension
+for root, _, files in os.walk('ipyaggrid/labextension'):
+    dir_ = os.path.relpath(root, 'ipyaggrid/labextension')
+    target_dir = 'share/jupyter/labextensions/ipyaggrid%s' % ('' if dir_ == '.' else "/%s" % dir_)
+    __data_files__.append((target_dir, ["%s/%s" % (root, f) for f in files]))
+
 __zip_safe__ = False
 __entry_points__ = {}

@@ -6,9 +6,6 @@ import * as Utils from './widget_utils';
 import { exportFunc } from './widget_export';
 import { JSONfunc } from './widget_json';
 
-// make available to helpers and js eval-ed
-const d3 = moduled3;
-
 /**
  * Builds the grid according to the options and data,
  * in the given div, and setups the style.
@@ -19,6 +16,9 @@ const d3 = moduled3;
  * @param {StyleSheet} sheet
  */
 const buildAgGrid = (view, gridData, gridOptions_str, div, sheet, dropdownMulti = null) => {
+    // make available to helpers and js eval-ed
+    const d3 = moduled3;
+
     // center and width
     if (view.model.get('center')) {
         div.style.margin = 'auto';
