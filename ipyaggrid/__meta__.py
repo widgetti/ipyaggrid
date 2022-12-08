@@ -22,11 +22,11 @@ __name__ = 'ipyaggrid'
 name_url = __name__.replace('_', '-')
 
 
-version_info = (0, 2, 3, 'alpha', 0)
+version_info = (0, 3, 0)
 __version__ = _get_version(version_info)
 
 # must be MANUALLY synced wih js.package.json.version
-version_js_info = (0, 2, 3, 'alpha', 0)
+version_js_info = (0, 3, 0)
 __version_js__ = _get_version(version_js_info)
 
 
