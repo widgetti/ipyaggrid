@@ -1,6 +1,6 @@
 # ipyauth Docs
 
-This folder contains the documentation, online on [gitlab](https://dgothrek.gitlab.io/ipyaggrid/).
+This folder contains the documentation, online on [gitlab](https://widgetti.github.io/ipyaggrid/).
 
 ## Develop
 

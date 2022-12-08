@@ -112,7 +112,7 @@ class Grid(wg.DOMWidget):
 
                  license=''):
         """
-        Instantiates the widget. See https://dgothrek.gitlab.io/ipyaggrid/guide/grid.html#parameters
+        Instantiates the widget. See https://widgetti.github.io/ipyaggrid/guide/create.html#parameters
         for more details.
         """
 
