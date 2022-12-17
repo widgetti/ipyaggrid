@@ -1,3 +1,3 @@
 # ipyaggrid
 
-See documentation: [DGothrek.gitlab.io/ipyaggrid](https://DGothrek.gitlab.io/ipyaggrid).
+See documentation: [widgetti.github.io/ipyaggrid/](https://widgetti.github.io/ipyaggrid/).
