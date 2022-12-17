@@ -243,9 +243,7 @@ function getProcessedNodes(options) {
         nodes.push(node);
     });
     options.api.forEachNodeAfterFilterAndSort(node => {
-        if (node.parent.id === 'ROOT_NODE_ID') {
-            res.push(cleanNode(node, columns.columns_keys));
-        }
+        res.push(cleanNode(node, columns.columns_keys));
     });
     return { data: res, values: columns.columns_headers };
 }
