@@ -24,7 +24,7 @@ jobs:
       - name: build js
         run: (cd js && npm install && npm run build:labextension)
       - name: Package
-        run: python setup.py bdist_wheel --universal
+        run: python setup.py sdist bdist_wheel --universal
       - name: Test Package
         run: pip install dist/*.whl && python -c "import ipyaggrid"
       - name: Publish a Python distribution to S3
