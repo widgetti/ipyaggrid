@@ -162,6 +162,15 @@ const buildAgGrid = (view, gridData, gridOptions_str, div, sheet, dropdownMulti 
             exportFunc.exportGrid(gridOptions, view);
         });
     }
+    
+    // listen for sort changes
+    if (view.model.get('sync_on_sort')) {
+        window.gridOptions = gridOptions;
+        gridOptions.api.addEventListener('sortChanged', params => {
+            // console.log(params);
+            exportFunc.exportGrid(gridOptions, view);
+        });
+    }
 
     // listen to _grid_data_down
     view.model.on('change:_grid_data_down', () => {

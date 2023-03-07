@@ -50,6 +50,7 @@ class Grid(wg.DOMWidget):
     show_toggle_delete = Bool(False).tag(sync=True)
     show_toggle_edit = Bool(False).tag(sync=True)
     sync_on_edit = Bool(False).tag(sync=True)
+    sync_on_sort = Bool(False).tag(sync=True)
     sync_grid = Bool(True).tag(sync=True)
     export_mode = Unicode('').tag(sync=True)
     _export_mode = Unicode('').tag(sync=True)  # Used for auto-export
@@ -96,6 +97,7 @@ class Grid(wg.DOMWidget):
                  show_toggle_delete=False,
                  show_toggle_edit=False,
                  sync_on_edit=False,
+                 sync_on_sort=False,
                  sync_grid=True,
                  paste_from_excel=False,
                  export_mode='disabled',
@@ -139,6 +141,7 @@ class Grid(wg.DOMWidget):
         self.show_toggle_delete = show_toggle_delete
         self.show_toggle_edit = show_toggle_edit
         self.sync_on_edit = sync_on_edit
+        self.sync_on_sort = sync_on_sort
         self.sync_grid = sync_grid
         self.paste_from_excel = paste_from_excel
         self.js_helpers_custom = js_helpers_custom
