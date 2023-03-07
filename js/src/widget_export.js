@@ -60,8 +60,20 @@ exportFunc.exportRangeData = (options, view) => {
 // Export Rows
 
 exportFunc.exportRows = (options, view) => {
-    const rows = options.api.getSelectedNodes();
+    //const rows = options.api.getSelectedNodes();
+    const rows = getSelectedNodesAsDisplayed(options);
     exportRowsFunc(options, view, rows);
+};
+
+const getSelectedNodesAsDisplayed = (options) => {
+    // Returns selected nodes in order as shown in table (with filter, sort, & grouping)
+    const rowNodes = [];
+    options.api.forEachNodeAfterFilterAndSort((node) => {
+        if (!node.group && node.selected) {
+            rowNodes.push(node);
+        }
+    });
+    return rowNodes; 
 };
 
 const exportRowsFunc = (options, view, rows) => {
