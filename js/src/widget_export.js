@@ -181,7 +181,35 @@ exportFunc.exportColumns = (options, view) => {
             index_columns: res.columns,
         },
     };
-    console.log(toUp);
+    //console.log(toUp);
+    view.model.set('_grid_data_up', toUp);
+    view.touch();
+};
+// Export current group columns
+exportFunc.exportGroupColumns = (options, view) => {
+    const columns = [['Group']];
+    const names = ['Index'];
+    const data = [];
+    const values = [];
+    let i = 0;
+    options.columnApi.getRowGroupColumns().forEach(col => {
+        data.push(col.colId);
+        values.push([i++]);
+    });
+    const res = {
+        names,
+        values,
+        data,
+        columns,
+    };
+    const toUp = {
+        groups: {
+            data: res.data,
+            index_rows: { names: res.names, values: res.values },
+            index_columns: res.columns,
+        },
+    };
+    //console.log(toUp);
     view.model.set('_grid_data_up', toUp);
     view.touch();
 };

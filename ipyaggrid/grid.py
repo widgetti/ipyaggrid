@@ -261,6 +261,26 @@ class Grid(wg.DOMWidget):
                 else:
                     self.grid_data_out['cols'] = pd.DataFrame(
                         **to_df).to_dict(orient='records')
+            if ('groups' in self._grid_data_up.keys()):
+                data_up = self._grid_data_up['groups']
+                to_df = {}
+                if(len(data_up['index_rows']['names']) != 0):
+                    to_df['index'] = pd.MultiIndex.from_tuples(
+                        *[data_up['index_rows']['values']], names=data_up['index_rows']['names'])
+                if data_up['index_columns']:
+                    if len(data_up['index_columns'][0]) == 1:
+                        index_columns = [elem[0]
+                                        for elem in data_up['index_columns']]
+                        to_df['columns'] = index_columns
+                    else:
+                        to_df['columns'] = pd.MultiIndex.from_tuples(
+                            *[data_up['index_columns']])
+                to_df['data'] = data_up['data']
+                if self.export_to_df:
+                    self.grid_data_out['groups'] = pd.DataFrame(**to_df)
+                else:
+                    self.grid_data_out['groups'] = pd.DataFrame(
+                        **to_df).to_dict(orient='records')
             x = 0
             if 'counter' in self.grid_data_out:
                 x = self.grid_data_out['counter']
