@@ -9,20 +9,16 @@ const exportFunc = {};
  */
 exportFunc.exportRangeData = (options, view) => {
     let rangeSelection;
+    let cols;
     try {
-        console.log(options.api.getCellRanges())
+        //console.log(options.api.getCellRanges())
         rangeSelection = options.api.getCellRanges();
+        rangeSelection = rangeSelection[0];
+        cols = findCorrectColumns(rangeSelection.columns, options);
     } catch (e) {
         console.log('No cells selected.');
         return;
     }
-
-    console.log(rangeSelection)
-    console.log(rangeSelection[0].startRow)
-    console.log(rangeSelection[0].endRow)
-    rangeSelection = rangeSelection[0];
-    console.log(rangeSelection)
-    const cols = findCorrectColumns(rangeSelection.columns, options);
     const rows = [];
 
     const id1 = rangeSelection.startRow.rowIndex;
@@ -52,7 +48,7 @@ exportFunc.exportRangeData = (options, view) => {
             index_columns: res.columns,
         },
     };
-    console.log(toUp);
+    //console.log(toUp);
     view.model.set('_grid_data_up', toUp);
     view.touch();
 };
@@ -87,7 +83,7 @@ const exportRowsFunc = (options, view, rows) => {
             index_columns: res.columns,
         },
     };
-    console.log(toUp);
+    //console.log(toUp);
     view.model.set('_grid_data_up', toUp);
     view.touch();
 };
@@ -149,13 +145,14 @@ function getCol(col, options) {
 
 exportFunc.exportColumns = (options, view) => {
     let rangeSelection;
+    let cols;
     try {
         rangeSelection = options.api.getCellRanges()[0];
+        cols = findCorrectColumns(rangeSelection.columns, options);
     } catch (e) {
         console.log('No cells selected.');
         return;
     }
-    const cols = findCorrectColumns(rangeSelection.columns, options);
     const rows = [];
 
     options.api.forEachNodeAfterFilterAndSort(node => rows.push(node));
@@ -255,7 +252,7 @@ exportFunc.exportGrid = function(options, view, level = 0) {
             index_columns: res.columns,
         },
     };
-    console.log(toUp);
+    //console.log(toUp);
     view.model.set('_grid_data_up', toUp);
     view.touch();
 };
