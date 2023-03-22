@@ -22,7 +22,7 @@ jobs:
       - name: Install dependencies
         run: pip install wheel jupyterlab twine
       - name: build js
-        run: (cd js && npm install && npm run build:labextension)
+        run: (cd js && npm ci && npm run build:labextension)
       - name: Package
         run: python setup.py sdist bdist_wheel --universal
       - name: Test Package

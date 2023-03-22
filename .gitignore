@@ -7,8 +7,7 @@
 *.ipynb_checkpoints/
 *.egg-info/
 
-*/package-lock.json
-**/node_modules/
+**/node_modules
 
 */static/
 ipyaggrid/nbextension/
