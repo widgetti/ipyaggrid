@@ -1,6 +1,6 @@
 # Dev Install
 
-This section is intentionally verbose in order to help ipywidget developer, in the Classic notebook as well as JupyterLab.  
+This section is intentionally verbose in order to help ipywidget developer, in the Classic notebook as well as JupyterLab.
 For more info about authoring Jupyter custom ipywidgets, see this [article](https://blog.jupyter.org/authoring-custom-jupyter-widgets-2884a462e724).
 
 ## Setup
@@ -12,7 +12,7 @@ $ git clone https://gitlab.com/DGothrek/ipyaggrid
 cd ipyaggrid
 ```
 
-It is tidier hence recommended to work in an isolated environment.  
+It is tidier hence recommended to work in an isolated environment.
 Create a dedicated environment:
 
 ```bash
@@ -100,7 +100,7 @@ $ export NODE_OPTIONS=--openssl-legacy-provider;
 Ensure that npm is updated to 8+, follow instructions to ensure the bundled node-gyp is updated:
 - https://github.com/nodejs/node-gyp/blob/main/docs/Updating-npm-bundled-node-gyp.md
 
-Start by building the Javascript modules.  
+Start by building the Javascript modules.
 Build the Javascript part of the ipywidget:
 
 ```bash
@@ -108,7 +108,7 @@ Build the Javascript part of the ipywidget:
 
 # build ipywidget js
 $ cd ipyaggrid/js
-$ npm install
+$ npm ci
 $ npm run build:labextension
 
 # (optional) auto rebuild js/ upon change - run in new terminal

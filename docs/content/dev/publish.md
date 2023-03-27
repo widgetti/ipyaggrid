@@ -2,11 +2,11 @@
 
 # Publish
 
-This section is intentionally verbose in order to help ipywidget developer.  
+This section is intentionally verbose in order to help ipywidget developer.
 
 ## Versions
 
-Set the **same** Javascript version in the following files.  
+Set the **same** Javascript version in the following files.
 _WARNING_: This is a **manual** sync.
 
 + `ipyaggrid/js/package.json`
@@ -35,7 +35,7 @@ git push --tags
 
 ## Node
 
-Build the Javascript files and publish the node package to [npmjs.org](https://www.npmjs.com/).  
+Build the Javascript files and publish the node package to [npmjs.org](https://www.npmjs.com/).
 For more info see th [official doc](https://docs.npmjs.com/getting-started/publishing-npm-packages).
 
 ```bash
@@ -44,7 +44,7 @@ For more info see th [official doc](https://docs.npmjs.com/getting-started/publi
 
 # build notebook extension javascript
 $ cd js
-$ npm install
+$ npm ci
 
 # test run to see what you will publish
 # npm pack
@@ -59,8 +59,8 @@ $ npm publish --access=public
 
 ## Python
 
-Publish the Python package to PyPI.  
-For more info see the [official doc](https://packaging.python.org/tutorials/distributing-packages/). 
+Publish the Python package to PyPI.
+For more info see the [official doc](https://packaging.python.org/tutorials/distributing-packages/).
 
 ```bash
 # starting from repo top folder

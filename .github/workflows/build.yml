@@ -26,7 +26,7 @@ jobs:
       - name: Change version
         run: python .github/ci_version.py
       - name: build js
-        run: (cd js && npm install && npm run build:labextension)
+        run: (cd js && npm ci && npm run build:labextension)
       - name: Package
         run: python setup.py sdist bdist_wheel --universal
       - name: Test Package
