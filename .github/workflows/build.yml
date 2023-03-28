@@ -22,7 +22,7 @@ jobs:
         with:
           python-version: 3.7
       - name: Install dependencies
-        run: pip install wheel jupyterlab
+        run: pip install wheel jupyterlab pytest
       - name: Change version
         run: python .github/ci_version.py
       - name: build js
@@ -31,6 +31,8 @@ jobs:
         run: python setup.py sdist bdist_wheel --universal
       - name: Test Package
         run: pip install dist/*.whl && python -c "import ipyaggrid"
+      - name: Run unit tests
+        run: pytest
       - name: Publish a Python distribution to S3
         continue-on-error: true
         uses: prewk/s3-cp-action@v2

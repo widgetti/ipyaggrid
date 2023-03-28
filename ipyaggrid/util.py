@@ -44,12 +44,13 @@ class Util:
     def json_serial(obj):
         if isinstance(obj, (dt.datetime, dt.date, pd.Timestamp)):
             return obj.isoformat()
-        elif isinstance(obj, np.generic):
+        if isinstance(obj, dt.time):
+            return str(obj)
+        if isinstance(obj, np.generic):
             return obj.item()
-        else:
-            raise TypeError(
-                "Unserializable object {} of type {}".format(obj, type(obj))
-            )
+        raise TypeError(
+            "Unserializable object {} of type {}".format(obj, type(obj))
+        )
 
     @staticmethod
     def strip_comments(code):
