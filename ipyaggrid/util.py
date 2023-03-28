@@ -48,6 +48,8 @@ class Util:
             return str(obj)
         if isinstance(obj, np.generic):
             return obj.item()
+        if isinstance(obj, np.ndarray):
+            return obj.tolist()
         raise TypeError(
             "Unserializable object {} of type {}".format(obj, type(obj))
         )
