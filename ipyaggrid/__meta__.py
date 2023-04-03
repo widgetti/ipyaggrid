@@ -26,14 +26,13 @@ __version_js__ = __version__
 
 __description__ = 'Jupyter widget - ag-grid in the notebook'
 __long_description__ = 'See repo README'
-__author__ = 'DGothrek'
-__author_email__ = 'louisraison1@gmail.com'
+__author__ = 'Mario Buikhuizen, Maarten Breddels, DGothrek'
+__author_email__ = 'mariobuikhuizen@gmail.com, maartenbreddels@gmail.com'
 
 # gitlab template
-__url__ = 'https://gitlab.com/{}/{}'.format(__author__, name_url)
-__download_url__ = 'https://gitlab.com/{}/{}/repository/archive.tar.gz?ref={}'.format(__author__,
-                                                                                      name_url,
-                                                                                      __version__)
+__url__ = 'https://github.com/widgetti/ipyaggrid'
+
+__download_url__ = 'https://github.com/widgetti/ipyaggrid/archive/refs/tags/v{}.zip'.format(__version__)
 
 __keywords__ = ['ipywidget',
                 'javascript',
