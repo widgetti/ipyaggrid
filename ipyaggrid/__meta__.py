@@ -20,14 +20,8 @@ def _get_version(version_info):
 
 __name__ = 'ipyaggrid'
 name_url = __name__.replace('_', '-')
-
-
-version_info = (0, 3, 2)
-__version__ = _get_version(version_info)
-
-# must be MANUALLY synced wih js.package.json.version
-version_js_info = (0, 3, 2)
-__version_js__ = _get_version(version_js_info)
+__version__ = '0.3.2'
+__version_js__ = __version__
 
 
 __description__ = 'Jupyter widget - ag-grid in the notebook'
