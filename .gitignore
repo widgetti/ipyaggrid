@@ -21,7 +21,6 @@ dist/
 package/
 
 *.old*
-*test.*
 js/temp.*
 
 */yarn.lock

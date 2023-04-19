@@ -68,6 +68,14 @@ setup(
     classifiers=classifiers,
     packages=packages,
     install_requires=install_requires,
+    extras_require={
+        "unit-test": [
+            "pytest",
+        ],
+        "ui-test": [
+            "solara[pytest] @ https://github.com/widgetti/solara/archive/refs/heads/feat_test_ipywidgets.zip",
+        ]
+    },
     include_package_data=include_package_data,
     package_data=package_data,
     data_files=data_files,
