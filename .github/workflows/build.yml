@@ -13,26 +13,38 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
+
       - name: Install node
         uses: actions/setup-node@v3
         with:
           node-version: "16.x"
-      - name: Set up Python 3.7
+
+      - name: Set up Python 3.8
         uses: actions/setup-python@v4
         with:
-          python-version: 3.7
+          python-version: 3.8
+
       - name: Install dependencies
-        run: pip install wheel jupyterlab pytest
-      - name: Change version
+        run: pip install wheel jupyterlab
+
+      - name: Change version for non-releases
+        if: ${{ ! startsWith(github.event.ref, 'refs/tags/v')}}
         run: python .github/ci_version.py
-      - name: build js
-        run: (cd js && npm ci && npm run build:labextension)
+
+      - name: Package js
+        run: (cd js && npm ci && npm run build:labextension && npm pack)
+
       - name: Package
         run: python setup.py sdist bdist_wheel --universal
-      - name: Test Package
-        run: pip install dist/*.whl && python -c "import ipyaggrid"
-      - name: Run unit tests
-        run: pytest
+
+      - name: Upload builds
+        uses: actions/upload-artifact@v3
+        with:
+          name: ipyaggrid-dist-${{ github.run_number }}
+          path: |
+            ./dist
+            ./js/*.tgz
+
       - name: Publish a Python distribution to S3
         continue-on-error: true
         uses: prewk/s3-cp-action@v2
@@ -42,3 +54,101 @@ jobs:
           source: "./dist/"
           dest: "s3://widgetti.pub/ipyaggrid/"
           flags: --recursive
+
+  test:
+    needs: [build]
+    runs-on: ubuntu-20.04
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: [3.6, 3.7, 3.8, 3.9, "3.10", "3.11"]
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: actions/download-artifact@v3
+        with:
+          name: ipyaggrid-dist-${{ github.run_number }}
+
+      - name: Install Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Install
+        run: pip install `echo dist/*.whl`[unit-test] "jupyter_server<2"
+
+      - name: Run unit tests
+        run: pytest tests/unit
+
+  ui-test:
+    needs: [build]
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: actions/download-artifact@v3
+        with:
+          name: ipyaggrid-dist-${{ github.run_number }}
+
+      - name: Install Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.8
+
+      - name: Install ipyaggrid
+        run: pip install `echo dist/*.whl`[ui-test] "jupyter_server<2"
+
+      - name: Install playwright browsers
+        run: playwright install chromium
+
+      - name: Run ui-tests
+        run: pytest tests/ui/ --video=retain-on-failure
+
+      - name: Upload Test artifacts
+        if: always()
+        uses: actions/upload-artifact@v2
+        with:
+          name: ipyaggrid-test-results-${{ github.run_number }}
+          path: test-results
+
+  release:
+    if: startsWith(github.event.ref, 'refs/tags/v')
+    needs: [test, ui-test]
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/download-artifact@v3
+        with:
+          name: ipyaggrid-dist-${{ github.run_number }}
+
+      - name: Install node
+        uses: actions/setup-node@v1
+        with:
+          node-version: "16.x"
+          registry-url: "https://registry.npmjs.org"
+
+      - name: Install Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.8
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install twine wheel jupyter-packaging jupyterlab
+
+      - name: Publish the Python package
+        env:
+          TWINE_USERNAME: __token__
+          TWINE_PASSWORD: ${{ secrets.PYPI_API_TOKEN }}
+        run: twine upload --skip-existing dist/*
+
+      - name: Publish the NPM package
+        run: |
+          cd js
+          echo $PRE_RELEASE
+          if [[ $PRE_RELEASE == "true" ]]; then export TAG="next"; else export TAG="latest"; fi
+          npm publish --tag ${TAG} --access public *.tgz
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          PRE_RELEASE: ${{ github.event.release.prerelease }}
