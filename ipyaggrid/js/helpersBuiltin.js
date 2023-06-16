@@ -1,7 +1,7 @@
 helpersBuiltin = {
     dateFormatter: function(node) {
         // make sure date is not undefined
-        if (node && node.value) {
+        if (node && node.value && node.value !== "NaT") {
             let d = new Date(node.value);
             let h = d.getHours();
             let m = d.getMinutes();

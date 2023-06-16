@@ -25,7 +25,7 @@ jobs:
           python-version: 3.8
 
       - name: Install dependencies
-        run: pip install wheel jupyterlab
+        run: pip install wheel "jupyterlab<4"
 
       - name: Change version for non-releases
         if: ${{ ! startsWith(github.event.ref, 'refs/tags/v')}}
@@ -97,7 +97,7 @@ jobs:
           python-version: 3.8
 
       - name: Install ipyaggrid
-        run: pip install `echo dist/*.whl`[ui-test] "jupyter_server<2"
+        run: pip install `echo dist/*.whl`[ui-test] "jupyter_server<2" playwright==1.32.1 jupyterlab==3.6.3
 
       - name: Install playwright browsers
         run: playwright install chromium
