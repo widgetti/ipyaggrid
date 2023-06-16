@@ -73,7 +73,7 @@ setup(
             "pytest",
         ],
         "ui-test": [
-            "solara[pytest] @ https://github.com/widgetti/solara/archive/refs/heads/feat_test_ipywidgets.zip",
+            "solara[pytest]",
         ]
     },
     include_package_data=include_package_data,
