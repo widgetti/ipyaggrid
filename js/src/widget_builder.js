@@ -45,7 +45,13 @@ const buildAgGrid = (view, gridData, gridOptions_str, div, sheet, dropdownMulti 
     div.appendChild(gridDiv);
 
     // Grid style
-    gridDiv.className = view.model.get('theme');
+    const bodyThemeDark = document.body.dataset.jpThemeLight === 'false';
+    const darkTheme = view.model.get('dark_theme');
+    if (bodyThemeDark && darkTheme) {
+        gridDiv.className = view.model.get('dark_theme');
+    } else {
+        gridDiv.className = view.model.get('theme');
+    }
 
     // parse menu param - my contain js
     const menu = JSON.parse(JSON.stringify(view.model.get('menu')));

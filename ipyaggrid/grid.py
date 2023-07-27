@@ -33,6 +33,7 @@ class Grid(wg.DOMWidget):
     height = Unicode('').tag(sync=True)
     center = Bool(False).tag(sync=True)
     theme = Unicode('').tag(sync=True)
+    dark_theme = Unicode('').tag(sync=True)
 
     _grid_data_down = List([]).tag(
         sync=True, to_json=Util.data_to_json)
@@ -81,6 +82,7 @@ class Grid(wg.DOMWidget):
                  height=0,
                  center=False,
                  theme='ag-theme-fresh',
+                 dark_theme='',
 
                  grid_data=[],
                  grid_options={},
@@ -120,6 +122,7 @@ class Grid(wg.DOMWidget):
         self.width_in = width
         self.height_in = height
         self.theme = theme
+        self.dark_theme = dark_theme
         self.css_rules = css_rules
         self.quick_filter = quick_filter
         self.export_csv = export_csv

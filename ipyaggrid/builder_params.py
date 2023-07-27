@@ -51,6 +51,9 @@ class BuilderParams:
         msg = 'theme must be one of {}'.format(li_theme)
         assert self.obj.theme in li_theme, msg
 
+        msg = 'dark_theme must be one of {} or empty'.format(li_theme)
+        assert self.obj.dark_theme in li_theme or self.obj.dark_theme == '', msg
+
         msg = 'css_rules must be a string'
         assert isinstance(self.obj.css_rules, str), msg
 
