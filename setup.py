@@ -17,8 +17,7 @@ from distutils.util import convert_path
 from setuptools import setup, find_packages
 
 packages = find_packages()
-module = packages[0]
-# print('module = {}'.format(module))
+module = "ipyaggrid"
 
 
 meta_ns = {}
@@ -74,6 +73,9 @@ setup(
         ],
         "ui-test": [
             "solara[pytest]",
+            "jupyter_server<2",
+            "playwright==1.32.1",
+            "jupyterlab==3.6.3"
         ]
     },
     include_package_data=include_package_data,
