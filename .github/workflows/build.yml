@@ -99,7 +99,7 @@ jobs:
           python-version: 3.8
 
       - name: Install ipyaggrid
-        run: pip install `echo dist/*.whl`[ui-test] "jupyter_server<2" playwright==1.32.1 jupyterlab==3.6.3
+        run: pip install `echo dist/*.whl`[ui-test] -r requirements-ui-test.txt
 
       - name: Install playwright browsers
         run: playwright install chromium
