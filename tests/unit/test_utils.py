@@ -1,6 +1,7 @@
 import datetime as dt
 import numpy as np
 import pytest
+import pandas as pd
 from unittest.mock import Mock
 
 from ipyaggrid.util import Util
@@ -13,7 +14,8 @@ from ipyaggrid.util import Util
     (np.full(3, 3), '[3, 3, 3]'),
     (np.full((3, 3), 3), '[[3, 3, 3], [3, 3, 3], [3, 3, 3]]'),
     (np.full(1, dt.datetime(2023, 3, 28, 12, 0, 0)), '["2023-03-28T12:00:00"]'),
-    (np.int32(1), '1')
+    (np.int32(1), '1'),
+    (pd.NA, '"<NA>"')
 ])
 def test_json_serialisation_without_data_compression(data, expected):
     widget_mock = Mock(compress_data=False)

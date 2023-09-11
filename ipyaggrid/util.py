@@ -50,6 +50,8 @@ class Util:
             return obj.item()
         if isinstance(obj, np.ndarray):
             return obj.tolist()
+        if pd.isna(obj):
+            return "<NA>"
         raise TypeError(
             "Unserializable object {} of type {}".format(obj, type(obj))
         )
