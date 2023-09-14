@@ -92,7 +92,7 @@ const buildAgGrid = (view, gridData, gridOptions_str, div, sheet, dropdownMulti 
     } else if (view.model.get('columns_fit') === 'auto') {
         gridOptions.onGridReady = () => {
             const allColumnIds = [];
-            gridOptions.columnApi.getAllColumns().forEach(column => {
+            gridOptions.columnApi.getColumns().forEach(column => {
                 allColumnIds.push(column.colId);
             });
             gridOptions.columnApi.autoSizeColumns(allColumnIds);

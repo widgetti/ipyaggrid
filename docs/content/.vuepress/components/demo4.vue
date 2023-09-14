@@ -474,7 +474,7 @@ export default {
                     price_2009: 37886,
                 },
             ]);
-            this.columnApi.autoSizeColumns(this.columnApi.getAllColumns());
+            this.columnApi.autoSizeColumns(this.columnApi.getColumns());
         },
     },
     beforeMount() {

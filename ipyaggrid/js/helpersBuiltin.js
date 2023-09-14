@@ -49,7 +49,7 @@ helpersBuiltin = {
 
     autoSizeAll: function(gridOptions) {
         const allColumnIds = [];
-        gridOptions.columnApi.getAllColumns().forEach(column => {
+        gridOptions.columnApi.getColumns().forEach(column => {
             allColumnIds.push(column.colId);
         });
         gridOptions.columnApi.autoSizeColumns(allColumnIds);
