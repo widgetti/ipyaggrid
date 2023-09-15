@@ -114,8 +114,8 @@ const onSuppr = (event, view, options) => {
                 const rows = [];
                 const ids = [];
                 selects.forEach(rangeSelection => {
-                    const i1 = rangeSelection.start.rowIndex;
-                    const i2 = rangeSelection.end.rowIndex;
+                    const i1 = rangeSelection.startRow.rowIndex;
+                    const i2 = rangeSelection.endRow.rowIndex;
                     const is = Math.min(i1, i2);
                     const ie = Math.max(i1, i2);
                     for (let i = is; i <= ie; i += 1) {
@@ -127,7 +127,7 @@ const onSuppr = (event, view, options) => {
                 });
                 return rows;
             };
-            const selections = options.api.getRangeSelections();
+            const selections = options.api.getCellRanges();
             const rows = getRows(selections);
             options.api.updateRowData({ remove: rows });
         } else {
