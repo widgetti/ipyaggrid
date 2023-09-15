@@ -16,7 +16,7 @@ import * as Utils from './widget_utils';
 import { version } from '../package.json';
 
 // styles
-import './styles/ipywidgets/widgets.css';
+import './styles/style.css';
 import './styles/ag-theme-excel.css';
 import './styles/switch_edit.css';
 import './styles/switch_delete.css';
