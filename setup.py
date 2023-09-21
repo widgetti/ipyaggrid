@@ -21,7 +21,7 @@ module = "cccs-ipyaggrid"
 
 
 meta_ns = {}
-ver_path = convert_path(module + '/__meta__.py')
+ver_path = convert_path('ipyaggrid' + '/__meta__.py')
 with open(ver_path) as ver_file:
     exec(ver_file.read(), meta_ns)
 
