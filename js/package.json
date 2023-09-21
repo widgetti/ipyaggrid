@@ -1,5 +1,5 @@
 {
-    "name": "ipyaggrid",
+    "name": "cccs-ipyaggrid",
     "version": "0.5.1",
     "description": "A jupyter widget embedding the ag-grid library",
     "author": "Louis Raison, oscar6echo",

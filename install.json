@@ -1,5 +1,5 @@
 {
     "packageManager": "python",
-    "packageName": "ipyaggrid",
-    "uninstallInstructions": "Use your Python package manager (pip, conda, etc.) to uninstall the package ipyaggrid"
+    "packageName": "cccs-ipyaggrid",
+    "uninstallInstructions": "Use your Python package manager (pip, conda, etc.) to uninstall the package cccs-ipyaggrid"
   }
