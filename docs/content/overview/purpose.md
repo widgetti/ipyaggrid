@@ -23,3 +23,9 @@ Like all ipywidgets **ipyaggrid** has 2 parts:
 + designed to enable easy access to basic ag-Grid features but allows unlimited customization through a full access to the ag-Grid API
 + as transparent as possible to give flexible and unhindered access to the underlying library
 + adds some convenience options and buttons to the most frequently used features
+
+## Sponsors
+
+Project ipyaggrid receives direct funding from the following sources:
+
+[![MSD](/ipyaggrid/msd-logo.svg)](https://msd.com)

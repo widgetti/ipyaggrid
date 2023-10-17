@@ -17,3 +17,9 @@ ipyaggrid was created by [Louis Raison](https://gitlab.com/DGothrek) and [oscar6
 For more context, read the original article [Harnessing the power of ag-Grid in Jupyter](https://medium.com/@olivier.borderies/harnessing-the-power-of-ag-grid-in-jupyter-3ae27fb21012).
 
 [Mario Buikhuizen](https://github.com/mariobuikhuizen) and [Maarten Breddels](https://github.com/maartenbreddels) took over maintenance in 2022.
+
+### Sponsors
+
+Project ipyaggrid receives direct funding from the following sources:
+
+[![MSD](docs/content/.vuepress/public/msd-logo.svg)](https://msd.com)
