@@ -47,7 +47,7 @@ export default {
       var httpRequest = new XMLHttpRequest();
       httpRequest.open(
         "GET",
-        "https://raw.githubusercontent.com/ag-grid/ag-grid-docs/master/src/olympicWinners.json"
+        "https://raw.githubusercontent.com/widgetti/ipyaggrid/master/data/OlympicWinners.json"
       );
       httpRequest.send();
       httpRequest.onreadystatechange = function() {
