@@ -60,23 +60,7 @@ helpersBuiltin = {
      * @param {Object} gridOptions
      */
     exportToCsv: function(gridOptions) {
-        const params = {
-            skipHeader: false,
-            columnGroups: true,
-            skipFooters: false,
-            skipGroups: false,
-            skipPinnedTop: false,
-            skipPinnedBottom: false,
-            allColumns: true,
-            onlySelected: false,
-            suppressQuotes: true,
-            fileName: 'my_file.csv',
-            sheetName: 'my_sheet',
-            shouldRowBeSkipped: () => false,
-            processCellCallback: param => param.value,
-            processHeaderCallback: null,
-        };
-        gridOptions.api.exportDataAsCsv(params);
+        gridOptions.api.exportDataAsCsv();
     },
 
     /**
@@ -84,22 +68,6 @@ helpersBuiltin = {
      * @param {Object} gridOptions
      */
     exportToExcel: function(gridOptions) {
-        const params = {
-            skipHeader: false,
-            columnGroups: true,
-            skipFooters: false,
-            skipGroups: false,
-            skipPinnedTop: false,
-            skipPinnedBottom: false,
-            allColumns: true,
-            onlySelected: false,
-            suppressQuotes: true,
-            fileName: 'my_file.xls',
-            sheetName: 'my_sheet',
-            shouldRowBeSkipped: () => false, // TODO : check
-            processCellCallback: param => param.value,
-            processHeaderCallback: null,
-        };
-        gridOptions.api.exportDataAsExcel(params);
+        gridOptions.api.exportDataAsExcel();
     },
 };
