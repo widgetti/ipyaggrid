@@ -17,6 +17,7 @@ You can manually deploy as follows:
 ```bash
 # build
 cd docs
+export NODE_OPTIONS=--openssl-legacy-provider;
 yarn docs:build
 
 # navigate into the build output directory

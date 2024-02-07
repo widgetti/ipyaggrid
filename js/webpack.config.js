@@ -4,12 +4,11 @@ const { version } = require('./package.json');
 // Custom webpack rules are generally the same for all webpack bundles, hence
 // stored in a separate local variable.
 const rules = [
-    { test: /\.scss$/, use: ['style-loader', 'css-loader', 'sass-loader'] },
     { test: /\.css$/, use: ['style-loader', 'css-loader'] },
     {
         test: /\.svg$/,
+        type: 'asset/inline',
         use: [
-            { loader: 'url-loader' },
             {
                 loader: 'svg-colorize-loader',
                 options: {
