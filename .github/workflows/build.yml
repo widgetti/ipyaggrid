@@ -127,12 +127,29 @@ jobs:
         run: export NODE_OPTIONS=--openssl-legacy-provider;(cd docs && npm ci && npm run docs:build)
       - name: Add .nojekyll
         run: (cd public && touch .nojekyll)
+      - name: move to subdir
+        run: mkdir upload_docs && mv public upload_docs/
       - name: Upload docs
         uses: actions/upload-artifact@v4
         with:
           name: ipyaggrid-docs-${{ github.run_number }}
           path: |
-            ./public
+            ./upload_docs
+
+  temp-deploy-docs:
+    needs: [ build-docs ]
+    runs-on: ubuntu-20.04
+    steps:
+    - uses: actions/download-artifact@v4
+      with:
+        name: ipyaggrid-docs-${{ github.run_number }}
+    - name: show files
+      run: find .
+    - name: Deploy docs
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GH_TOKEN }}
+        publish_dir: ./public
 
   release:
     if: startsWith(github.event.ref, 'refs/tags/v')
