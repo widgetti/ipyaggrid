@@ -114,9 +114,29 @@ jobs:
           name: ipyaggrid-test-results-${{ github.run_number }}
           path: test-results
 
+  build-docs:
+    runs-on: ubuntu-20.04
+
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20.x"
+      - name: Build docs
+        run: export NODE_OPTIONS=--openssl-legacy-provider;(cd docs && npm ci && npm run docs:build)
+      - name: Add .nojekyll
+        run: (cd public && touch .nojekyll)
+      - name: Upload docs
+        uses: actions/upload-artifact@v4
+        with:
+          name: ipyaggrid-docs-${{ github.run_number }}
+          path: |
+            ./public
+
   release:
     if: startsWith(github.event.ref, 'refs/tags/v')
-    needs: [test, ui-test]
+    needs: [test, ui-test, build-docs]
     runs-on: ubuntu-20.04
     steps:
       - uses: actions/download-artifact@v4
@@ -154,3 +174,12 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
           PRE_RELEASE: ${{ github.event.release.prerelease }}
+
+      - uses: actions/download-artifact@v4
+        with:
+          name: ipyaggrid-docs-${{ github.run_number }}
+      - name: Deploy docs
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GH_TOKEN }}
+          publish_dir: ./public
