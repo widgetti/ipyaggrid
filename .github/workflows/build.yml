@@ -14,20 +14,20 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - name: Install node
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
-          node-version: "16.x"
+          node-version: "20.x"
 
       - name: Set up Python 3.8
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
           python-version: 3.8
 
       - name: Install dependencies
-        run: pip install wheel "jupyterlab<4"
+        run: pip install wheel "jupyterlab>=4.1"
 
       - name: Change version for non-releases
         if: ${{ ! startsWith(github.event.ref, 'refs/tags/v')}}
@@ -40,7 +40,7 @@ jobs:
         run: python setup.py sdist bdist_wheel --universal
 
       - name: Upload builds
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: ipyaggrid-dist-${{ github.run_number }}
           path: |
@@ -66,14 +66,14 @@ jobs:
         python-version: [3.6, 3.7, 3.8, 3.9, "3.10", "3.11"]
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
 
-      - uses: actions/download-artifact@v3
+      - uses: actions/download-artifact@v4
         with:
           name: ipyaggrid-dist-${{ github.run_number }}
 
       - name: Install Python
-        uses: actions/setup-python@v2
+        uses: actions/setup-python@v5
         with:
           python-version: ${{ matrix.python-version }}
 
@@ -87,14 +87,14 @@ jobs:
     needs: [build]
     runs-on: ubuntu-20.04
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
 
-      - uses: actions/download-artifact@v3
+      - uses: actions/download-artifact@v4
         with:
           name: ipyaggrid-dist-${{ github.run_number }}
 
       - name: Install Python
-        uses: actions/setup-python@v2
+        uses: actions/setup-python@v5
         with:
           python-version: 3.8
 
@@ -109,7 +109,7 @@ jobs:
 
       - name: Upload Test artifacts
         if: always()
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           name: ipyaggrid-test-results-${{ github.run_number }}
           path: test-results
@@ -119,18 +119,18 @@ jobs:
     needs: [test, ui-test]
     runs-on: ubuntu-20.04
     steps:
-      - uses: actions/download-artifact@v3
+      - uses: actions/download-artifact@v4
         with:
           name: ipyaggrid-dist-${{ github.run_number }}
 
       - name: Install node
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v4
         with:
-          node-version: "16.x"
+          node-version: "20.x"
           registry-url: "https://registry.npmjs.org"
 
       - name: Install Python
-        uses: actions/setup-python@v2
+        uses: actions/setup-python@v5
         with:
           python-version: 3.8
 

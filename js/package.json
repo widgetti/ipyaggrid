@@ -49,15 +49,15 @@
         "@jupyter-widgets/controls": "^2.0.0 || ^3 || ^4 || ^5",
         "ag-grid-community": "28.1.1",
         "ag-grid-enterprise": "28.1.1",
-        "d3": "^5.9.7",
+        "d3": "^7.8.5",
         "lodash": "^4.17.15",
         "pako": "^1.0.10"
     },
     "devDependencies": {
         "@babel/core": "^7.4.4",
         "@babel/preset-env": "^7.4.4",
-        "@jupyterlab/builder": "^3.2.3",
-        "css-loader": "^3.1.0",
+        "@jupyterlab/builder": "^4",
+        "css-loader": "^6",
         "eslint": "^5.16.0",
         "eslint-config-airbnb": "^17.1.1",
         "eslint-config-prettier": "^6.0.0",
@@ -66,19 +66,11 @@
         "eslint-plugin-jsx-a11y": "^6.2.3",
         "eslint-plugin-prettier": "^3.1.0",
         "eslint-plugin-react": "^7.14.3",
-        "html-webpack-plugin": "^3.2.0",
-        "less": "^3.9.0",
-        "less-loader": "^5.0.0",
-        "node-sass": "^7.0.0",
         "prettier": "^1.18.2",
         "rimraf": "^2.6.3",
-        "sass": "^1.22.7",
-        "sass-loader": "^7.1.0",
-        "style-loader": "^0.23.1",
+        "style-loader": "^3",
         "svg-colorize-loader": "^0.1.2",
-        "url-loader": "^2.1.0",
-        "watch": "^1.0.2",
-        "webpack": "^4.43.0",
-        "webpack-cli": "^3.3.6"
+        "webpack": "^5",
+        "webpack-cli": "^5"
     }
 }

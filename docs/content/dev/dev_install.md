@@ -91,13 +91,7 @@ $ code ipyaggrid-ext-folders-jupyterlab.code-workspace
 
 ## Javascript
 
-Older interfaces of openssl are used in some libraries, set environment variable to allow:
-
-```bash
-$ export NODE_OPTIONS=--openssl-legacy-provider;
-```
-
-Ensure that npm is updated to 8+, follow instructions to ensure the bundled node-gyp is updated:
+Ensure that Node.js is updated to 18+, follow instructions to ensure the bundled node-gyp is updated:
 - https://github.com/nodejs/node-gyp/blob/main/docs/Updating-npm-bundled-node-gyp.md
 
 Start by building the Javascript modules.
