@@ -20,7 +20,7 @@ def _get_version(version_info):
 
 __name__ = 'ipyaggrid'
 name_url = __name__.replace('_', '-')
-__version__ = '0.5.1'
+__version__ = '0.5.2'
 __version_js__ = __version__
 
 
