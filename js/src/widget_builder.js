@@ -1,5 +1,4 @@
 import { Grid } from 'ag-grid-community';
-import { LicenseManager } from 'ag-grid-enterprise';
 import * as moduled3 from 'd3';
 
 import * as Utils from './widget_utils';
@@ -24,11 +23,6 @@ const buildAgGrid = (view, gridData, gridOptions_str, div, sheet, dropdownMulti 
         div.style.margin = 'auto';
     }
     div.style.width = view.model.get('width');
-
-    // License
-    if (view.model.get('license') !== '') {
-        LicenseManager.setLicenseKey(view.model.get('license'));
-    }
 
     // Add menu div, regrouping all the buttons and inputs
     const menuDiv = document.createElement('div');

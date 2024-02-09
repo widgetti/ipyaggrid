@@ -7,6 +7,9 @@ const id = 'ipyaggrid:plugin';
 const requires = [base.IJupyterWidgetRegistry];
 const autoStart = true;
 
+const baseUrl = JSON.parse(document.getElementById("jupyter-config-data").textContent).baseUrl;
+__webpack_public_path__ = `${baseUrl}lab/extensions/ipyaggrid/static/`;
+
 const activate = (app, widgets) => {
     console.log('JupyterLab extension ipyaggrid is activated!');
 

@@ -9,6 +9,8 @@ To create a grid with **ipyaggrid** you need:
 - bring you data as (1) a list of dict or (2) a dataframe
 - define ag-Grid `gridOptions` as a dict - see [ag-Grid doc](https://www.ag-grid.com/javascript-grid-properties/)
 - pass them to the `Grid` constructor, along with specific options - see below
+  - Use `ipyaggrid.Grid` for the enterprise version or `ipyaggrid.community.Grid` for the community version of ag-Grid.
+    (Using `ipyaggrid.Grid` and setting the `license` argument to "community" will also use the community version)
 - display the ipywidget thus created
 
 ::: tip

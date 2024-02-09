@@ -2,8 +2,6 @@
 // It contains some requirejs configuration and the `load_ipython_extension`
 // which is required for any notebook extension.
 
-__webpack_public_path__ = document.querySelector('body').getAttribute('data-base-url') + 'nbextensions/test';
-
 // Configure requirejs
 if (window.require) {
     window.require.config({

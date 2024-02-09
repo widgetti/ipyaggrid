@@ -52,6 +52,7 @@ __data_files__ = [
         'ipyaggrid/nbextension/extension.js',
         'ipyaggrid/nbextension/index.js',
         'ipyaggrid/nbextension/index.js.map',
+        'ipyaggrid/nbextension/906.index.js'
     ]),
     ('etc/jupyter/nbconfig/notebook.d', [
         'ipyaggrid/ipyaggrid.json'
