@@ -134,6 +134,7 @@ const buildAgGrid = (view, gridData, gridOptions_str, div, sheet, dropdownMulti 
             gridOptions.api.updateRowData({ remove: rows });
             if (view.model.get('sync_grid')) {
                 exportFunc.exportGrid(gridOptions, view);
+                exportFunc.exportGroupColumns(gridOptions, view);
             }
         }
         if (view.model.get('_export_mode') === 'rows') {
@@ -142,6 +143,7 @@ const buildAgGrid = (view, gridData, gridOptions_str, div, sheet, dropdownMulti 
         }
         if (view.model.get('_export_mode') === 'grid') {
             exportFunc.exportGrid(gridOptions, view);
+            exportFunc.exportGroupColumns(gridOptions, view);
         }
         if (view.model.get('_export_mode') === 'columns') {
             if (gridOptions.enableRangeSelection) exportFunc.exportColumns(gridOptions, view);
@@ -154,6 +156,12 @@ const buildAgGrid = (view, gridData, gridOptions_str, div, sheet, dropdownMulti 
         gridOptions.api.addEventListener('cellValueChanged', params => {
             // console.log(params);
             exportFunc.exportGrid(gridOptions, view);
+        });
+        gridOptions.api.addEventListener('columnRowGroupChanged', params => {
+            exportFunc.exportGroupColumns(gridOptions, view);
+        });
+        gridOptions.api.addEventListener('rowGroupOpened', params => { // forces sync of state
+            exportFunc.exportGroupColumns(gridOptions, view); 
         });
     }
 
@@ -173,6 +181,7 @@ const buildAgGrid = (view, gridData, gridOptions_str, div, sheet, dropdownMulti 
                     exportFunc.exportRangeData(gridOptions, view);
                     exportFunc.exportColumns(gridOptions, view);
                     exportFunc.exportRowsOfRange(gridOptions, view);
+                    exportFunc.exportGroupColumns(gridOptions, view);
                 // }
             });
         }
