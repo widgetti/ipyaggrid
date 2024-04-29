@@ -1,3 +1,5 @@
+import time
+
 import playwright.sync_api
 from IPython.display import display
 
@@ -48,6 +50,9 @@ def test_svg_icons(ipywidgets_runner, page_session: playwright.sync_api.Page, as
         w = ipywidgets.HTML(value='<div class="ag-theme-excel"><div class="ag-row-drag" style="width: 20px; height: 20px; border: 1px dashed green"></div></div>')
         display(w)
     ipywidgets_runner(kernel_code)
+
+    time.sleep(1)
+
     assert_solara_snapshot(page_session.locator(".ag-row-drag").screenshot())
 
 
