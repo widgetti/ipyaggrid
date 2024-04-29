@@ -52,7 +52,6 @@ exportFunc.exportRangeData = (options, view) => {
             index_columns: res.columns,
         },
     };
-    console.log(toUp);
     view.model.set('_grid_data_up', toUp);
     view.touch();
 };
@@ -87,7 +86,6 @@ const exportRowsFunc = (options, view, rows) => {
             index_columns: res.columns,
         },
     };
-    console.log(toUp);
     view.model.set('_grid_data_up', toUp);
     view.touch();
 };
@@ -181,7 +179,6 @@ exportFunc.exportColumns = (options, view) => {
             index_columns: res.columns,
         },
     };
-    console.log(toUp);
     view.model.set('_grid_data_up', toUp);
     view.touch();
 };
@@ -227,7 +224,6 @@ exportFunc.exportGrid = function(options, view, level = 0) {
             index_columns: res.columns,
         },
     };
-    console.log(toUp);
     view.model.set('_grid_data_up', toUp);
     view.touch();
 };
