@@ -35,8 +35,8 @@ class BuilderParams:
         assert (isinstance(self.obj.width_in, int)
                 or isinstance(self.obj.width_in, str)), msg
 
-        msg = 'height must be an int (number of pixels)'
-        assert isinstance(self.obj.height_in, int), msg
+        msg = 'height must be a string'
+        assert isinstance(self.obj.height_in, str), msg
 
         li_theme = [
             'ag-theme-balham',
