@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Dev Install | ipyaggrid</title>
+    <meta name="description" content="Using ag-Grid interactively in a Jupyter notebook">
+    <link rel="icon" href="/ipyaggrid/favicon-16x16.png">
+    
+    <link rel="preload" href="/ipyaggrid/assets/css/0.styles.e73c49e3.css" as="style"><link rel="preload" href="/ipyaggrid/assets/js/app.3b051494.js" as="script"><link rel="preload" href="/ipyaggrid/assets/js/36.0f242111.js" as="script"><link rel="prefetch" href="/ipyaggrid/assets/js/1.461fc821.js"><link rel="prefetch" href="/ipyaggrid/assets/js/10.bafb4e65.js"><link rel="prefetch" href="/ipyaggrid/assets/js/11.245eadde.js"><link rel="prefetch" href="/ipyaggrid/assets/js/12.c2ac1079.js"><link rel="prefetch" href="/ipyaggrid/assets/js/13.3695328e.js"><link rel="prefetch" href="/ipyaggrid/assets/js/14.b3610413.js"><link rel="prefetch" href="/ipyaggrid/assets/js/15.cac98349.js"><link rel="prefetch" href="/ipyaggrid/assets/js/16.a48d4db7.js"><link rel="prefetch" href="/ipyaggrid/assets/js/17.b364dfd3.js"><link rel="prefetch" href="/ipyaggrid/assets/js/18.3ceb0be9.js"><link rel="prefetch" href="/ipyaggrid/assets/js/19.01cab638.js"><link rel="prefetch" href="/ipyaggrid/assets/js/2.50a98492.js"><link rel="prefetch" href="/ipyaggrid/assets/js/20.e6cda6f4.js"><link rel="prefetch" href="/ipyaggrid/assets/js/21.8d5e05f9.js"><link rel="prefetch" href="/ipyaggrid/assets/js/22.6470fbec.js"><link rel="prefetch" href="/ipyaggrid/assets/js/23.a80a8c1d.js"><link rel="prefetch" href="/ipyaggrid/assets/js/24.15c6f5e1.js"><link rel="prefetch" href="/ipyaggrid/assets/js/25.f21359ff.js"><link rel="prefetch" href="/ipyaggrid/assets/js/26.6db36f1e.js"><link rel="prefetch" href="/ipyaggrid/assets/js/27.aa316a25.js"><link rel="prefetch" href="/ipyaggrid/assets/js/28.03f29e41.js"><link rel="prefetch" href="/ipyaggrid/assets/js/29.217eac82.js"><link rel="prefetch" href="/ipyaggrid/assets/js/30.f40e8cd0.js"><link rel="prefetch" href="/ipyaggrid/assets/js/31.5567c152.js"><link rel="prefetch" href="/ipyaggrid/assets/js/32.0d779f86.js"><link rel="prefetch" href="/ipyaggrid/assets/js/33.afc7e731.js"><link rel="prefetch" href="/ipyaggrid/assets/js/34.b1f6eef5.js"><link rel="prefetch" href="/ipyaggrid/assets/js/35.3611b109.js"><link rel="prefetch" href="/ipyaggrid/assets/js/37.7e10fec4.js"><link rel="prefetch" href="/ipyaggrid/assets/js/38.e9b6fd17.js"><link rel="prefetch" href="/ipyaggrid/assets/js/39.7169b902.js"><link rel="prefetch" href="/ipyaggrid/assets/js/40.a19d6dca.js"><link rel="prefetch" href="/ipyaggrid/assets/js/41.d7471438.js"><link rel="prefetch" href="/ipyaggrid/assets/js/42.b518f0a6.js"><link rel="prefetch" href="/ipyaggrid/assets/js/43.271b4070.js"><link rel="prefetch" href="/ipyaggrid/assets/js/44.8397be05.js"><link rel="prefetch" href="/ipyaggrid/assets/js/45.99c337ec.js"><link rel="prefetch" href="/ipyaggrid/assets/js/46.b1b977ab.js"><link rel="prefetch" href="/ipyaggrid/assets/js/5.37d2ce9e.js"><link rel="prefetch" href="/ipyaggrid/assets/js/6.79c3d8e4.js"><link rel="prefetch" href="/ipyaggrid/assets/js/7.e6662c15.js"><link rel="prefetch" href="/ipyaggrid/assets/js/8.1a0306f2.js"><link rel="prefetch" href="/ipyaggrid/assets/js/9.51cc0aa1.js"><link rel="prefetch" href="/ipyaggrid/assets/js/vendors~docsearch.f27c720f.js">
+    <link rel="stylesheet" href="/ipyaggrid/assets/css/0.styles.e73c49e3.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/ipyaggrid/" class="home-link router-link-active"><!----> <span class="site-name">ipyaggrid</span></a> <div class="links" style="max-width:nullpx;"><form id="search-form" class="algolia-search-wrapper search-box"><input id="algolia-search-input" class="search-query"></form> <nav class="nav-links can-hide"><div class="nav-item"><a href="/ipyaggrid/overview/purpose.html" class="nav-link">Overview</a></div><div class="nav-item"><a href="/ipyaggrid/guide/install.html" class="nav-link">User Guide</a></div><div class="nav-item"><a href="/ipyaggrid/dev/dev_install.html" aria-current="page" class="nav-link router-link-exact-active router-link-active">Development</a></div> <a href="https://github.com/widgetti/ipyaggrid" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav></div></header> <div class="sidebar-mask"></div> <div class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/ipyaggrid/overview/purpose.html" class="nav-link">Overview</a></div><div class="nav-item"><a href="/ipyaggrid/guide/install.html" class="nav-link">User Guide</a></div><div class="nav-item"><a href="/ipyaggrid/dev/dev_install.html" aria-current="page" class="nav-link router-link-exact-active router-link-active">Development</a></div> <a href="https://github.com/widgetti/ipyaggrid" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav>  <ul class="sidebar-links"><li><div class="sidebar-group first"><p class="sidebar-heading"><span>Overview</span> <!----></p> <ul class="sidebar-group-items"><li><a href="/ipyaggrid/overview/purpose.html" class="sidebar-link">Purpose</a></li><li><a href="/ipyaggrid/overview/ag-Grid.html" class="sidebar-link">ag-Grid</a></li></ul></div></li><li><div class="sidebar-group"><p class="sidebar-heading"><span>User Guide</span> <!----></p> <ul class="sidebar-group-items"><li><a href="/ipyaggrid/guide/install.html" class="sidebar-link">Install</a></li><li><a href="/ipyaggrid/guide/create.html" class="sidebar-link">Create</a></li><li><a href="/ipyaggrid/guide/customize.html" class="sidebar-link">Customize</a></li><li><a href="/ipyaggrid/guide/export.html" class="sidebar-link">Export</a></li></ul></div></li><li><div class="sidebar-group"><p class="sidebar-heading open"><span>Developer</span> <!----></p> <ul class="sidebar-group-items"><li><a href="/ipyaggrid/dev/dev_install.html" aria-current="page" class="active sidebar-link">Dev Install</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/ipyaggrid/dev/dev_install.html#setup" class="sidebar-link">Setup</a></li><li class="sidebar-sub-header"><a href="/ipyaggrid/dev/dev_install.html#folders" class="sidebar-link">Folders</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/ipyaggrid/dev/dev_install.html#classic-notebook" class="sidebar-link">Classic Notebook</a></li><li class="sidebar-sub-header"><a href="/ipyaggrid/dev/dev_install.html#jupyterlab" class="sidebar-link">JupyterLab</a></li><li class="sidebar-sub-header"><a href="/ipyaggrid/dev/dev_install.html#vs-code" class="sidebar-link">VS Code</a></li></ul></li><li class="sidebar-sub-header"><a href="/ipyaggrid/dev/dev_install.html#javascript" class="sidebar-link">Javascript</a></li><li class="sidebar-sub-header"><a href="/ipyaggrid/dev/dev_install.html#python" class="sidebar-link">Python</a></li><li class="sidebar-sub-header"><a href="/ipyaggrid/dev/dev_install.html#extensions" class="sidebar-link">Extensions</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/ipyaggrid/dev/dev_install.html#notebook" class="sidebar-link">Notebook</a></li><li class="sidebar-sub-header"><a href="/ipyaggrid/dev/dev_install.html#lab" class="sidebar-link">Lab</a></li></ul></li><li class="sidebar-sub-header"><a href="/ipyaggrid/dev/dev_install.html#check-extensions" class="sidebar-link">Check Extensions</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/ipyaggrid/dev/dev_install.html#notebook-2" class="sidebar-link">Notebook</a></li><li class="sidebar-sub-header"><a href="/ipyaggrid/dev/dev_install.html#lab-2" class="sidebar-link">Lab</a></li></ul></li><li class="sidebar-sub-header"><a href="/ipyaggrid/dev/dev_install.html#run" class="sidebar-link">Run</a></li><li class="sidebar-sub-header"><a href="/ipyaggrid/dev/dev_install.html#uninstall" class="sidebar-link">Uninstall</a></li></ul></li><li><a href="/ipyaggrid/dev/publish.html" class="sidebar-link">Publish</a></li><li><a href="/ipyaggrid/dev/doc.html" class="sidebar-link">Documentation</a></li><li><a href="/ipyaggrid/dev/structure.html" class="sidebar-link">Structure</a></li></ul></div></li></ul> </div> <div class="page"> <div class="content"><h1 id="dev-install"><a href="#dev-install" class="header-anchor">#</a> Dev Install</h1> <p>This section is intentionally verbose in order to help ipywidget developer, in the Classic notebook as well as JupyterLab.
+For more info about authoring Jupyter custom ipywidgets, see this <a href="https://blog.jupyter.org/authoring-custom-jupyter-widgets-2884a462e724" target="_blank" rel="noopener noreferrer">article<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>.</p> <h2 id="setup"><a href="#setup" class="header-anchor">#</a> Setup</h2> <p>Download the source:</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token function">git</span> clone https://gitlab.com/DGothrek/ipyaggrid
+<span class="token builtin class-name">cd</span> ipyaggrid
+</code></pre></div><p>It is tidier hence recommended to work in an isolated environment.
+Create a dedicated environment:</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># create conda env</span>
+$ conda create <span class="token parameter variable">-n</span> dev-ipyaggrid <span class="token assign-left variable">python</span><span class="token operator">=</span><span class="token number">3</span>
+<span class="token comment"># activate env (without source for Windows)</span>
+$ <span class="token builtin class-name">source</span> activate dev-ipyaggrid
+<span class="token comment"># install dependencies</span>
+<span class="token punctuation">(</span>dev-ipyaggrid<span class="token punctuation">)</span> $ pip <span class="token function">install</span> notebook
+<span class="token punctuation">(</span>dev-ipyaggrid<span class="token punctuation">)</span> $ pip <span class="token function">install</span> <span class="token parameter variable">-r</span> ipyaggrid/requirements.txt
+</code></pre></div><p>Additionally for JupyterLab:</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># node from conda forge for a compatible version</span>
+<span class="token punctuation">(</span>dev-ipyaggrid<span class="token punctuation">)</span> $ conda <span class="token function">install</span> jupyterlab nodejs <span class="token parameter variable">-c</span> conda-forge
+</code></pre></div><p>The commands below are assumed to run from this <code>dev-ipyaggrid</code> environment.</p> <h2 id="folders"><a href="#folders" class="header-anchor">#</a> Folders</h2> <p>It is instructing to keep an eye on configuration folders to follow what the install modifies in the file system.</p> <h3 id="classic-notebook"><a href="#classic-notebook" class="header-anchor">#</a> Classic Notebook</h3> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># list jupyter folders</span>
+$ jupyter <span class="token parameter variable">--paths</span>
+<span class="token comment"># you should see something like:</span>
+config:
+    /Users/Olivier/.jupyter                                <span class="token comment"># user</span>
+    /usr/local/anaconda3/envs/dev-ipyaggrid/etc/jupyter    <span class="token comment"># sys-prefix</span>
+    /usr/local/etc/jupyter                                 <span class="token comment"># system</span>
+    /etc/jupyter                                           <span class="token comment"># default</span>
+data:
+    /Users/Olivier/Library/Jupyter                         <span class="token comment"># user</span>
+    /usr/local/anaconda3/envs/dev-ipyaggrid/share/jupyter  <span class="token comment"># sys-prefix</span>
+    /usr/local/share/jupyter                               <span class="token comment"># system</span>
+    /usr/share/jupyter                                     <span class="token comment"># default</span>
+runtime:
+    /Users/Olivier/Library/Jupyter/runtime
+</code></pre></div><h3 id="jupyterlab"><a href="#jupyterlab" class="header-anchor">#</a> JupyterLab</h3> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># list jupyterlab folders</span>
+$ jupyter lab path
+<span class="token comment"># you should see something like:</span>
+Application directory:   /usr/local/anaconda3/share/jupyter/lab
+User Settings directory: /Users/Olivier/.jupyter/lab/user-settings
+Workspaces directory /Users/Olivier/.jupyter/lab/workspaces
+</code></pre></div><h3 id="vs-code"><a href="#vs-code" class="header-anchor">#</a> VS Code</h3> <p>If you use <a href="https://code.visualstudio.com/" target="_blank" rel="noopener noreferrer">Visual Studio Code<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a> you can build a workspace for all these folders and open it.</p> <ul><li>Classic Notebook:</li></ul> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># build .code-workspace file</span>
+$ python util/build_code_workspace_notebook.py
+$ code ipyaggrid-ext-folders-notebook.code-workspace
+</code></pre></div><ul><li>JupyterLab:</li></ul> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># build .code-workspace file</span>
+$ python util/build_code_workspace_jupyterlab.py
+$ code ipyaggrid-ext-folders-jupyterlab.code-workspace
+</code></pre></div><h2 id="javascript"><a href="#javascript" class="header-anchor">#</a> Javascript</h2> <p>Ensure that Node.js is updated to 18+, follow instructions to ensure the bundled node-gyp is updated:</p> <ul><li>https://github.com/nodejs/node-gyp/blob/main/docs/Updating-npm-bundled-node-gyp.md</li></ul> <p>Start by building the Javascript modules.
+Build the Javascript part of the ipywidget:</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># from repo top folder</span>
+
+<span class="token comment"># build ipywidget js</span>
+$ <span class="token builtin class-name">cd</span> ipyaggrid/js
+$ <span class="token function">npm</span> ci
+$ <span class="token function">npm</span> run build:labextension
+
+<span class="token comment"># (optional) auto rebuild js/ upon change - run in new terminal</span>
+$ <span class="token function">npm</span> run <span class="token function">watch</span>
+</code></pre></div><h2 id="python"><a href="#python" class="header-anchor">#</a> Python</h2> <p>Install the Python package in <a href="https://packaging.python.org/tutorials/installing-packages/#installing-from-a-local-src-tree" target="_blank" rel="noopener noreferrer">dev mode<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>.</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># install Python package</span>
+<span class="token builtin class-name">cd</span> <span class="token punctuation">..</span>
+$ pip <span class="token function">install</span> <span class="token parameter variable">-e</span> <span class="token builtin class-name">.</span>
+</code></pre></div><h2 id="extensions"><a href="#extensions" class="header-anchor">#</a> Extensions</h2> <h3 id="notebook"><a href="#notebook" class="header-anchor">#</a> Notebook</h3> <p>Install the notebook extension:</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ jupyter nbextension <span class="token function">install</span> <span class="token parameter variable">--py</span> <span class="token parameter variable">--symlink</span> --sys-prefix ipyaggrid
+<span class="token comment"># if the target files already exist it will fail: remove them manually</span>
+<span class="token comment"># you should see something like:</span>
+Installing /Users/Olivier/Documents/dev/ipyaggrid-repo/ipyaggrid/ipyaggrid_widget/static -<span class="token operator">&gt;</span> ipyaggrid
+Symlinking: /usr/local/anaconda3/envs/dev-ipyaggrid/share/jupyter/nbextensions/ipyaggrid -<span class="token operator">&gt;</span> /Users/Olivier/Documents/dev/ipyaggrid-repo/ipyaggrid/ipyaggrid_widget/static
+- Validating: OK
+
+    To initialize this nbextension <span class="token keyword">in</span> the browser every <span class="token function">time</span> the notebook <span class="token punctuation">(</span>or other app<span class="token punctuation">)</span> loads:
+
+          jupyter nbextension <span class="token builtin class-name">enable</span> ipyaggrid <span class="token parameter variable">--py</span> --sys-prefix
+</code></pre></div><p>Enable the notebook extension:</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ jupyter nbextension <span class="token builtin class-name">enable</span> <span class="token parameter variable">--py</span> --sys-prefix ipyaggrid
+<span class="token comment"># you should see something like:</span>
+Enabling notebook extension ipyaggrid/extension<span class="token punctuation">..</span>.
+      - Validating: OK
+</code></pre></div><h3 id="lab"><a href="#lab" class="header-anchor">#</a> Lab</h3> <p>Install the JupyterLab extension:</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ jupyter labextension <span class="token function">link</span> ipyaggrid/js --no-build
+
+<span class="token comment"># you also must have installed ipywidgets in jupyterlab:</span>
+<span class="token comment"># $ jupyter labextension install @jupyter-widgets/jupyterlab-manager</span>
+</code></pre></div><h2 id="check-extensions"><a href="#check-extensions" class="header-anchor">#</a> Check Extensions</h2> <h3 id="notebook-2"><a href="#notebook-2" class="header-anchor">#</a> Notebook</h3> <p>Check the notebook extension:</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># notebook extensions status</span>
+$ jupyter nbextension list
+<span class="token comment"># for the sys-prefix config folder you should see at least:</span>
+Known nbextensions:
+  config dir: /usr/local/anaconda3/envs/dev-ipyaggrid/etc/jupyter/nbconfig
+    notebook section
+      jupyter-js-widgets/extension  enabled
+      - Validating: OK
+      ipyaggrid/extension  enabled
+      - Validating: OK
+</code></pre></div><p>Open the notebook extension config file:</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token function">cat</span> /usr/local/anaconda3/envs/dev-ipyaggrid/etc/jupyter/nbconfig/notebook.json
+<span class="token comment"># you should see at least something like:</span>
+<span class="token punctuation">{</span>
+  <span class="token string">&quot;load_extensions&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+    <span class="token string">&quot;jupyter-js-widgets/extension&quot;</span><span class="token builtin class-name">:</span> true,
+    <span class="token string">&quot;ipyaggrid/extension&quot;</span><span class="token builtin class-name">:</span> <span class="token boolean">true</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>Finally the nbextensions data folder should contain symlinks to the ipyaggrid static/ folder:</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># (if necessary: brew install tree)</span>
+$ tree /usr/local/anaconda3/envs/dev-ipyaggrid/share/jupyter/nbextensions
+<span class="token comment"># you should see at least:</span>
+/usr/local/anaconda3/envs/dev-ipyaggrid/share/jupyter/nbextensions
+├── ipyaggrid -<span class="token operator">&gt;</span> /Users/Olivier/Documents/dev/ipyaggrid-repo/ipyaggrid/ipyaggrid_widget/static
+└── jupyter-js-widgets
+    ├── extension.js
+    └── extension.js.map
+</code></pre></div><h3 id="lab-2"><a href="#lab-2" class="header-anchor">#</a> Lab</h3> <p>Check JupyterLab extensions:</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># jupyterlab extensions status</span>
+$ jupyter labextension list
+<span class="token comment"># you should see at least:</span>
+JupyterLab v0.32.1
+Known labextensions:
+   app dir: /usr/local/anaconda3/envs/dev-ipyaggrid/share/jupyter/lab
+@jupyter-widgets/jupyterlab-manager
+        @jupyter-widgets/jupyterlab-manager v0.35.0  enabled  OK
+ipyaggrid
+        ipyaggrid v0.1.0-beta.1  enabled  OK
+</code></pre></div><h2 id="run"><a href="#run" class="header-anchor">#</a> Run</h2> <p>Move the the notebooks folder and launch the notebook server:</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># from repo top folder</span>
+$ <span class="token builtin class-name">cd</span> notebooks
+
+<span class="token comment"># launch notebook server and open browser to the classic file system</span>
+$ jupyter notebook
+
+<span class="token comment"># launch notebook server and open browser jupyterlab</span>
+$ jupyter lab <span class="token parameter variable">--watch</span> <span class="token comment"># auto rebuild</span>
+</code></pre></div><p>Then open a demo notebook.</p> <h2 id="uninstall"><a href="#uninstall" class="header-anchor">#</a> Uninstall</h2> <p>Proceed in the install reverse order.</p> <ol><li>Remove the frontend extension:</li></ol> <p>For the classic notebook remove the notebook extension:</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ jupyter nbextension uninstall <span class="token parameter variable">--py</span> --sys-prefix ipyaggrid
+</code></pre></div><p>For Jupyterlab remove the extension:</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ jupyter labextension unlink ipyaggrid/js
+</code></pre></div><ol><li>Uninstall the Python package:</li></ol> <div class="language-bash extra-class"><pre class="language-bash"><code>$ pip uninstall ipyaggrid
+</code></pre></div></div> <div class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated: </span> <span class="time">6/4/2024, 12:58:12 PM</span></div></div> <div class="page-nav"><p class="inner"><span class="prev">
+        ←
+        <a href="/ipyaggrid/guide/export.html" class="prev">
+          Export
+        </a></span> <span class="next"><a href="/ipyaggrid/dev/publish.html">
+          Publish
+        </a>
+        →
+      </span></p></div> </div> <!----></div></div>
+    <script src="/ipyaggrid/assets/js/app.3b051494.js" defer></script><script src="/ipyaggrid/assets/js/36.0f242111.js" defer></script>
+  </body>
+</html>
